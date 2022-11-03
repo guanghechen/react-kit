@@ -3,7 +3,11 @@
     "gitmoji",
     "guanghechen",
     "lintfix",
+    "Parens",
     "pinst",
     "postpublish"
-  ]
+  ],
+  "files.associations": {
+    ".prettierrc": "yaml"
+  }
 }
