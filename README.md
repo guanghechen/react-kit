@@ -61,4 +61,6 @@ react-kit is [MIT licensed](https://github.com/guanghechen/react-kit/tree/releas
 
 
 [homepage]: https://github.com/guanghechen/react-kit/tree/release-2.x.x
+[@guanghechen/react-confetti]: ./packages/react-react-confetti
 [@guanghechen/react-hooks]: ./packages/react-hooks
+[@guanghechen/parse-lineno]: ./packages/parse-lineno
