@@ -6,8 +6,7 @@ const baseConfig = tsMonorepoConfig(__dirname)
 module.exports = {
   ...baseConfig,
   collectCoverageFrom: [...(baseConfig.collectCoverageFrom ?? [])],
-  coveragePathIgnorePatterns: [
-  ],
+  coveragePathIgnorePatterns: [],
   coverageThreshold: {
     global: {
       branches: 20,
