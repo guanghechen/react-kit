@@ -5,6 +5,7 @@
     "module": "CommonJS",
     "sourceMap": true,
     "paths": {
+      "@guanghechen/parse-lineno": ["packages/parse-lineno/src"],
       "@guanghechen/react-hooks": ["packages/react-hooks/src"],
       "jest.helper": ["jest.helper.ts"]
     }
