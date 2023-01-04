@@ -1,7 +1,9 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 const { tsMonorepoConfig } = require('@guanghechen/jest-config')
 
-const baseConfig = tsMonorepoConfig(__dirname)
+const baseConfig = tsMonorepoConfig(__dirname, {
+  useESM: true,
+})
 
 module.exports = {
   ...baseConfig,
@@ -14,12 +16,5 @@ module.exports = {
       lines: 60,
       statements: 60,
     },
-  },
-  moduleNameMapper: {
-    ...(baseConfig.moduleNameMapper ?? {}),
-  },
-  setupFiles: [...(baseConfig.setupFiles ?? [])],
-  transform: {
-    ...(baseConfig.transform ?? {}),
   },
 }
