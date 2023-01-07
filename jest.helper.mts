@@ -4,9 +4,11 @@ import {
   createFilepathDesensitizer,
   createJsonDesensitizer,
 } from '@guanghechen/helper-jest'
-import fs from 'fs'
-import path from 'path'
+import fs from 'node:fs'
+import path from 'node:path'
+import url from 'node:url'
 
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 export const workspaceRootDir = __dirname
 
 /**

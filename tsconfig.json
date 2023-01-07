@@ -6,7 +6,7 @@
     "paths": {
       "@guanghechen/parse-lineno": ["packages/parse-lineno/src"],
       "@guanghechen/react-hooks": ["packages/react-hooks/src"],
-      "jest.helper": ["jest.helper.ts"]
+      "jest.helper": ["jest.helper.mts"]
     }
   },
   "exclude": ["**/__test__/fixtures"]

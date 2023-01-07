@@ -18,11 +18,14 @@
   ],
   "type": "module",
   "exports": {
-    "import": "./lib/esm/index.mjs",
-    "require": "./lib/cjs/index.cjs"
+    "types": "./lib/types/index.d.ts",
+    "require": "./lib/cjs/index.cjs",
+    "import": "./lib/esm/index.mjs"
   },
-  "types": "lib/types/index.d.ts",
-  "source": "src/index.ts",
+  "types": "./lib/types/index.d.ts",
+  "main": "./lib/cjs/index.cjs",
+  "module": "./lib/esm/index.mjs",
+  "source": "./src/index.ts",
   "license": "MIT",
   "engines": {
     "node": ">= 16.0.0"
@@ -37,7 +40,7 @@
   ],
   "scripts": {
     "build": "rimraf lib/ && cross-env NODE_ENV=production rollup -c ../../rollup.config.mjs",
-    "prepublishOnly": "cross-env ROLLUP_SHOULD_SOURCEMAP=false yarn build"
+    "prepublishOnly": "yarn build"
   },
   "dependencies": {
     "@guanghechen/react-hooks": "^2.2.0",
