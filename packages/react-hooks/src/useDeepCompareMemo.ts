@@ -1,5 +1,5 @@
-import isEqual from 'fast-deep-equal/react'
 import React from 'react'
+import isEqual from './util/fast-deep-equal'
 
 /**
  * Deep compare version of React.useMemo
