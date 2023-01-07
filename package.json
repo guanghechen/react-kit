@@ -29,7 +29,8 @@
     "rebuild": "run-s clean build",
     "test": "lerna run test --concurrency 1",
     "test:coverage": "lerna run --concurrency 1 test -- --coverage",
-    "test:update": "lerna run --concurrency 1 test -- -u"
+    "test:update": "lerna run --concurrency 1 test -- -u",
+    "update:changelog": "gitmoji-changelog update"
   },
   "workspaces": [
     "packages/*"
