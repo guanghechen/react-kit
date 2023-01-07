@@ -1,5 +1,5 @@
+import isEqual from '@guanghechen/fast-deep-equal'
 import React from 'react'
-import isEqual from './util/fast-deep-equal'
 
 /**
  * Deep compare version of React.useCallback

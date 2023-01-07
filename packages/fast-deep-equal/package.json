@@ -1,7 +1,7 @@
 {
-  "name": "@guanghechen/react-hooks",
+  "name": "@guanghechen/fast-deep-equal",
   "version": "2.2.1",
-  "description": "Some custom react hooks.",
+  "description": "The fastest deep equal with ES6 Map, Set and Typed arrays support.",
   "author": {
     "name": "guanghechen",
     "url": "https://github.com/guanghechen/"
@@ -9,17 +9,12 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/guanghechen/react-kit/tree/release-2.x.x",
-    "directory": "packages/react-hooks"
+    "directory": "packages/fast-deep-equal"
   },
-  "homepage": "https://github.com/guanghechen/react-kit/tree/release-2.x.x/packages/react-hooks#readme",
+  "homepage": "https://github.com/guanghechen/react-kit/tree/release-2.x.x/packages/fast-deep-equal#readme",
   "keywords": [
-    "react hooks",
-    "useDeepCompareCallback",
-    "useDeepCompareEffect",
-    "useDeepCompareMemo",
-    "useEventCallback",
-    "useInterval",
-    "usePreviousState"
+    "lineno string",
+    "interval string"
   ],
   "type": "module",
   "exports": {
@@ -45,17 +40,16 @@
   ],
   "scripts": {
     "build": "rimraf lib/ && cross-env NODE_ENV=production rollup -c ../../rollup.config.mjs",
-    "prepublishOnly": "yarn build"
-  },
-  "dependencies": {
-    "@guanghechen/fast-deep-equal": "^2.2.1"
-  },
-  "peerDependencies": {
-    "react": ">= 17.0.0"
+    "prepublishOnly": "yarn build",
+    "test": "cross-env TS_NODE_FILES=true NODE_OPTIONS=--experimental-vm-modules jest --config ../../jest.config.mjs --rootDir ."
   },
   "devDependencies": {
+    "@types/react-test-renderer": "^17.0.2",
     "cross-env": "^7.0.3",
+    "react": "^17.0.2",
+    "react-test-renderer": "^17.0.2",
     "rimraf": "^3.0.2",
-    "rollup": "^3.9.1"
+    "rollup": "^3.9.1",
+    "sinon": "^15.0.1"
   }
 }

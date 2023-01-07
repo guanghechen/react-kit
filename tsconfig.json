@@ -4,7 +4,9 @@
     "baseUrl": ".",
     "sourceMap": true,
     "paths": {
+      "@guanghechen/fast-deep-equal": ["packages/fast-deep-equal/src"],
       "@guanghechen/parse-lineno": ["packages/parse-lineno/src"],
+      "@guanghechen/react-confetti": ["packages/react-confetti/src"],
       "@guanghechen/react-hooks": ["packages/react-hooks/src"],
       "jest.helper": ["jest.helper.mts"]
     }
