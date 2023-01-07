@@ -1,5 +1,36 @@
 # Changelog
 
+<a name="2.2.1"></a>
+## 2.2.1 (2023-01-07)
+
+### Changed
+
+- 🎨 improve: remove fast-deep-equal since it&#x27;s not support ESM [[9d504d6](https://github.com/guanghechen/react-kit/commit/9d504d6ca03704e8dab695fa46e5fb25ebe0c06b)]
+- ⬆️ chore: upgrade devDependencies [[2bc00f7](https://github.com/guanghechen/react-kit/commit/2bc00f7ef1e0b9307bc36ca6f8fec323d56fdaa8)]
+
+
+<a name="2.2.0"></a>
+## 2.2.0 (2023-01-04)
+
+### Changed
+
+- ⬆️ chore: update configs [[d7eb7c7](https://github.com/guanghechen/react-kit/commit/d7eb7c70ae05b745461a136dbfe6dcae69fa6ce8)]
+- ⬆️ chore: upgrade dependencies [[3634d43](https://github.com/guanghechen/react-kit/commit/3634d430bd74d5e529984f407b12ab341e4accd2)]
+- 🔧 chore: update spell words [[8b3af01](https://github.com/guanghechen/react-kit/commit/8b3af01a6069708af661d7fb39b321e7776c8647)]
+
+### Fixed
+
+- 💚 chore: add ci config [[1daaf87](https://github.com/guanghechen/react-kit/commit/1daaf875f1da40cc34646c62c6cabc010276e98d)]
+
+
+<a name="0.0.0"></a>
+## 0.0.0 (2023-01-07)
+
+### Changed
+
+- 🔧 chore: fix npm script [[1a08571](https://github.com/guanghechen/react-kit/commit/1a08571390abe2e59b889752b0f75dd7793c9503)]
+
+
 <a name="2.1.4"></a>
 ## 2.1.4 (2022-11-03)
 
