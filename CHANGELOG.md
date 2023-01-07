@@ -1,5 +1,25 @@
 # Changelog
 
+<a name="2.2.2"></a>
+## 2.2.2 (2023-01-07)
+
+### Added
+
+- ✨ feat: implement @guanghechen/fast-deep-equal [[47c29ca](https://github.com/guanghechen/react-kit/commit/47c29cac8ac7ff36576f09710446ec3dc2245302)]
+
+### Changed
+
+- 🔧 chore: fix npm script [[1a08571](https://github.com/guanghechen/react-kit/commit/1a08571390abe2e59b889752b0f75dd7793c9503)]
+
+
+<a name="0.0.0"></a>
+## 0.0.0 (2023-01-07)
+
+### Changed
+
+- 🔧 chore: update yarn.lock [[a939041](https://github.com/guanghechen/react-kit/commit/a9390413a9e89039c6e5784e729ac36ab776f250)]
+
+
 <a name="2.2.1"></a>
 ## 2.2.1 (2023-01-07)
 
