@@ -681,13 +681,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@guanghechen/eslint-config-jsx@npm:^3.0.0-alpha.5":
-  version: 3.0.0-alpha.5
-  resolution: "@guanghechen/eslint-config-jsx@npm:3.0.0-alpha.5"
+"@guanghechen/eslint-config-jsx@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@guanghechen/eslint-config-jsx@npm:3.0.0"
   dependencies:
     "@babel/eslint-parser": ^7.19.1
     "@babel/plugin-syntax-import-assertions": ^7.20.0
-    "@guanghechen/eslint-config": ^3.0.0-alpha.5
+    "@guanghechen/eslint-config": ^3.0.0
     confusing-browser-globals: ^1.0.11
     eslint-plugin-import: ^2.26.0
     eslint-plugin-jsx-a11y: ^6.6.1
@@ -696,31 +696,31 @@ __metadata:
   peerDependencies:
     "@babel/core": ^7.0.0
     eslint: ^8.0.0
-  checksum: 1e10d1354feb41cddbdded7820706ef0926a5377aafe3472f1c61e31de8ce1c4658b855a57afeabb7303a2839a76992525e218528631f9d2deee1cd8bb2e675b
+  checksum: 6a8d57e78b831a29493722ede8a79d1f2b847c2d69b12454c2bf920ac94b3d98946f8d651d6c1169e752ef58be1fbcb82f3320fdbd5650d8b4325c73c0748249
   languageName: node
   linkType: hard
 
-"@guanghechen/eslint-config-ts@npm:^3.0.0-alpha.5":
-  version: 3.0.0-alpha.5
-  resolution: "@guanghechen/eslint-config-ts@npm:3.0.0-alpha.5"
+"@guanghechen/eslint-config-ts@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@guanghechen/eslint-config-ts@npm:3.0.0"
   dependencies:
-    "@guanghechen/eslint-config": ^3.0.0-alpha.5
+    "@guanghechen/eslint-config": ^3.0.0
     "@typescript-eslint/eslint-plugin": ^5.47.1
     "@typescript-eslint/parser": ^5.47.1
   peerDependencies:
     eslint: ^8.0.0
-  checksum: dda28d0cb1f7a39d9177cb6262996d679522e832c64ecc4df31b494f09e560b825df6fe9036e27472bf07578dae1f88d50bf1bcb63011549a34d7f526e55a873
+  checksum: ae6439226024e27ce55e9519a290cd49e228e66e2c7185502897598813e0a14238251e4f02af7f993f77d6d54d625591c1385ea7dcdf6c03a49622c9de114cb4
   languageName: node
   linkType: hard
 
-"@guanghechen/eslint-config@npm:^3.0.0-alpha.5":
-  version: 3.0.0-alpha.5
-  resolution: "@guanghechen/eslint-config@npm:3.0.0-alpha.5"
+"@guanghechen/eslint-config@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@guanghechen/eslint-config@npm:3.0.0"
   dependencies:
     eslint-plugin-import: ^2.26.0
   peerDependencies:
     eslint: ^8.0.0
-  checksum: 6d29b61fdf7985393333d91807cc2e3621b3ae37568a57b116dd2266c7c09bc20b5dcffa58f79ab4064e9af273546df7724ba3ddcdeb6db7f0f788a8db672e52
+  checksum: 70a0a90983aa8292dfcca6a9f695e7a13839dfb679f766af1f0dbbcc3c5aefabb3c42f1e19b4bffaf58fe86e0d363895fe8418497c67b2ed4c96ff3f7ba66b33
   languageName: node
   linkType: hard
 
@@ -738,36 +738,36 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@guanghechen/helper-func@npm:^3.0.0-alpha.5":
-  version: 3.0.0-alpha.5
-  resolution: "@guanghechen/helper-func@npm:3.0.0-alpha.5"
-  checksum: 04e754cf895df8e243e7ce5dfb28b21acc89408c98595880fc3a8f394edd6e80ca102ba2af3065830a3f5aec01fe012e857e8791867c23a851a58164dfb2240e
+"@guanghechen/helper-func@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@guanghechen/helper-func@npm:3.0.0"
+  checksum: 3408acf160c3018ba5a6c530b9d162bee57847af07490d72db4e9ec3ad369c46f2a18a40d4f82dba5bef02e8d839c325257454722319cb74870cb444e4a6854c
   languageName: node
   linkType: hard
 
-"@guanghechen/helper-is@npm:^3.0.0-alpha.5":
-  version: 3.0.0-alpha.5
-  resolution: "@guanghechen/helper-is@npm:3.0.0-alpha.5"
-  checksum: 1a826ab6fac70685198748175dccc9f3dd1e9a7254ff9d0ee58e1e82d6ed2b144b7609ea9890cb69de9cb097ddc59b57c38a7039aae3c1732f4c1757eaefbe3c
+"@guanghechen/helper-is@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@guanghechen/helper-is@npm:3.0.0"
+  checksum: 8aa466887e1bcd4219b18dec5722ed4043efee233dc6b688acbf97037e0627b19dcca0980ef82da7aad5d95965f023c838bf5b5c73b07e314e0dff6c9abac1bc
   languageName: node
   linkType: hard
 
-"@guanghechen/helper-jest@npm:^3.0.0-alpha.5":
-  version: 3.0.0-alpha.5
-  resolution: "@guanghechen/helper-jest@npm:3.0.0-alpha.5"
+"@guanghechen/helper-jest@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@guanghechen/helper-jest@npm:3.0.0"
   dependencies:
-    "@guanghechen/helper-func": ^3.0.0-alpha.5
-    "@guanghechen/helper-is": ^3.0.0-alpha.5
+    "@guanghechen/helper-func": ^3.0.0
+    "@guanghechen/helper-is": ^3.0.0
     "@jest/globals": ^29.3.1
     jest: ^29.3.1
-  checksum: e8526b16b74ccb00e14cea8cf0fa7dd00af196813cc9b774f5ab5fe158df97333dfe56e1ba555d537d8e757f664b2182d52e236c1fc27fe459b8689e41058e00
+  checksum: 710a3b38def0fff15e84d0b2eeb8f428ce6c22673c3a2bb905cc27147534db675dab61dfe04523106ab860f7488d78305b17bd956383515a7fbaaba364f359d0
   languageName: node
   linkType: hard
 
-"@guanghechen/jest-config@npm:^3.0.0-alpha.5":
-  version: 3.0.0-alpha.5
-  resolution: "@guanghechen/jest-config@npm:3.0.0-alpha.5"
-  checksum: cedee845827580b734aa1a71eebe677f1d4554aad516597c4a21017a434fe620866754eab0668b2fc32c4a3de6b14a4f36e7b6a4ad3d6144d82ded69c4afd973
+"@guanghechen/jest-config@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@guanghechen/jest-config@npm:3.0.0"
+  checksum: f9618751434eaee543bc1a9622b38f9c108858a16e6104a1b73ac1022b09c3e3bfd26044075035f2e0c59337df735983b853164946ec0edaa51dd1f90f3138dc
   languageName: node
   linkType: hard
 
@@ -813,12 +813,12 @@ __metadata:
   resolution: "@guanghechen/react-kit@workspace:."
   dependencies:
     "@babel/core": 7.20.12
-    "@guanghechen/eslint-config": ^3.0.0-alpha.5
-    "@guanghechen/eslint-config-jsx": ^3.0.0-alpha.5
-    "@guanghechen/eslint-config-ts": ^3.0.0-alpha.5
-    "@guanghechen/helper-jest": ^3.0.0-alpha.5
-    "@guanghechen/jest-config": ^3.0.0-alpha.5
-    "@guanghechen/rollup-config": ^3.0.0-alpha.5
+    "@guanghechen/eslint-config": ^3.0.0
+    "@guanghechen/eslint-config-jsx": ^3.0.0
+    "@guanghechen/eslint-config-ts": ^3.0.0
+    "@guanghechen/helper-jest": ^3.0.0
+    "@guanghechen/jest-config": ^3.0.0
+    "@guanghechen/rollup-config": ^3.0.0
     "@types/jest": 29.2.5
     "@types/node": ^16.18.11
     "@types/react": ^17.0.52
@@ -835,7 +835,7 @@ __metadata:
     lint-staged: 13.1.0
     npm-run-all: 4.1.5
     pinst: 3.0.0
-    prettier: 2.8.1
+    prettier: 2.8.2
     react: ^17.0.2
     rimraf: ^3.0.2
     rollup: ^3.9.1
@@ -845,9 +845,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@guanghechen/rollup-config@npm:^3.0.0-alpha.5":
-  version: 3.0.0-alpha.5
-  resolution: "@guanghechen/rollup-config@npm:3.0.0-alpha.5"
+"@guanghechen/rollup-config@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@guanghechen/rollup-config@npm:3.0.0"
   dependencies:
     "@rollup/plugin-commonjs": 24.0.0
     "@rollup/plugin-json": 6.0.0
@@ -857,7 +857,7 @@ __metadata:
     rollup-plugin-dts: ^5.1.0
   peerDependencies:
     rollup: ^3.0.0
-  checksum: 404fadb74e0ce5eb30b497518d7894b64a98a3ed38e7c0cfd7b4987a0057b962c46139f20ab39edcb24904b4bbbaceebde10d40696da69adfc68ff8177098c09
+  checksum: 0618dfef670b2623ba22b56684703503c2ea621b0e897ed1e676007533debcd4d998e31d8a8a6374927f2f5b03f5b74ab3e3c397a9ecdcf8940e18e501382514
   languageName: node
   linkType: hard
 
@@ -10533,12 +10533,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.8.1":
-  version: 2.8.1
-  resolution: "prettier@npm:2.8.1"
+"prettier@npm:2.8.2":
+  version: 2.8.2
+  resolution: "prettier@npm:2.8.2"
   bin:
     prettier: bin-prettier.js
-  checksum: 4f21a0f1269f76fb36f54e9a8a1ea4c11e27478958bf860661fb4b6d7ac69aac1581f8724fa98ea3585e56d42a2ea317a17ff6e3324f40cb11ff9e20b73785cc
+  checksum: 740c56c2128d587d656ea1dde9bc9c3503dfc94db4f3ac387259215eeb2e216680bdad9d18a0c9feecc6b42cfa188d6fa777df4c36c1d00cedd4199074fbfbd2
   languageName: node
   linkType: hard
 
