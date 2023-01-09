@@ -1,5 +1,15 @@
 # Changelog
 
+<a name="2.2.3"></a>
+## 2.2.3 (2023-01-09)
+
+### Changed
+
+- ⬆️ chore: upgrade devDependencies [[d85559a](https://github.com/guanghechen/react-kit/commit/d85559af06d750fc08b419e836980a067205bf9e)]
+- 🔧 chore: update yarn.lock when publish new release [[72c7613](https://github.com/guanghechen/react-kit/commit/72c761312a8fdb50ebe4d4a67111ddc74b4742e0)]
+- 🔧 chore: update yarn.lock [[a939041](https://github.com/guanghechen/react-kit/commit/a9390413a9e89039c6e5784e729ac36ab776f250)]
+
+
 <a name="2.2.2"></a>
 ## 2.2.2 (2023-01-07)
 
