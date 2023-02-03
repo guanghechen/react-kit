@@ -681,6 +681,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@guanghechen/dom-blob@workspace:packages/dom-blob":
+  version: 0.0.0-use.local
+  resolution: "@guanghechen/dom-blob@workspace:packages/dom-blob"
+  dependencies:
+    cross-env: ^7.0.3
+    rimraf: ^3.0.2
+    rollup: ^3.9.1
+  languageName: unknown
+  linkType: soft
+
 "@guanghechen/eslint-config-jsx@npm:^3.0.0":
   version: 3.0.0
   resolution: "@guanghechen/eslint-config-jsx@npm:3.0.0"

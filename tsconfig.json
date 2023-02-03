@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "sourceMap": true,
     "paths": {
+      "@guanghechen/dom-blob": ["packages/dom-blob/src"],
       "@guanghechen/fast-deep-equal": ["packages/fast-deep-equal/src"],
       "@guanghechen/parse-lineno": ["packages/parse-lineno/src"],
       "@guanghechen/react-confetti": ["packages/react-confetti/src"],
