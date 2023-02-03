@@ -1,5 +1,13 @@
 # Changelog
 
+<a name="2.2.4"></a>
+## 2.2.4 (2023-02-03)
+
+### Added
+
+- ✨ feat: add @guanghechen/dom-blob (migrated from @guanghechen/helper-blob) [[dd41510](https://github.com/guanghechen/react-kit/commit/dd415109096812acec0a5f25a8fd025e12b88ae4)]
+
+
 <a name="2.2.3"></a>
 ## 2.2.3 (2023-01-09)
 
