@@ -1,5 +1,14 @@
 # Changelog
 
+<a name="2.2.5"></a>
+## 2.2.5 (2023-03-11)
+
+### Changed
+
+- ⬆️ chore: upgrade dependencies [[2562ea2](https://github.com/guanghechen/react-kit/commit/2562ea283e79bd3ce423a8405756e4afebe6f02d)]
+- 🎨 improve: fix lint [[b71f5e1](https://github.com/guanghechen/react-kit/commit/b71f5e1331a22a26bce3a55908d7ccd96e59f38a)]
+
+
 <a name="2.2.4"></a>
 ## 2.2.4 (2023-02-03)
 
