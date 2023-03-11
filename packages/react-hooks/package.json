@@ -1,6 +1,6 @@
 {
   "name": "@guanghechen/react-hooks",
-  "version": "2.2.4",
+  "version": "2.2.5",
   "description": "Some custom react hooks.",
   "author": {
     "name": "guanghechen",
@@ -48,7 +48,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@guanghechen/fast-deep-equal": "^2.2.4"
+    "@guanghechen/fast-deep-equal": "^2.2.5"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0"
