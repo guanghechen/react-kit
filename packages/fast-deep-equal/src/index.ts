@@ -12,7 +12,7 @@ export function isEqual(x: any, y: any): boolean {
     if (x.constructor !== y.constructor) return false
 
     if (Array.isArray(x)) {
-      if (x.length != y.length) return false
+      if (x.length !== y.length) return false
       for (let i = 0; i < x.length; ++i) {
         if (!isEqual(x[i], y[i])) return false
       }
@@ -24,7 +24,7 @@ export function isEqual(x: any, y: any): boolean {
     if (x.toString !== Object.prototype.toString) return x.toString() === y.toString()
 
     const keys = Object.keys(x)
-    if (keys.length !== Object.keys(y).length) return false;
+    if (keys.length !== Object.keys(y).length) return false
 
     for (let i = 0; i < keys.length; ++i) {
       if (!Object.prototype.hasOwnProperty.call(y, keys[i])) return false
@@ -45,7 +45,7 @@ export function isEqual(x: any, y: any): boolean {
   }
 
   // true if both NaN, false otherwise
-  return x !== x && y !== y
+  return Number.isNaN(x) && Number.isNaN(y)
 }
 
 export default isEqual
