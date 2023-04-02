@@ -1,6 +1,6 @@
 {
   "name": "@guanghechen/fast-deep-equal",
-  "version": "2.2.5",
+  "version": "2.2.6",
   "description": "The fastest deep equal with ES6 Map, Set and Typed arrays support.",
   "author": {
     "name": "guanghechen",
