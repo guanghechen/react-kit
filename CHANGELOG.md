@@ -1,5 +1,22 @@
 # Changelog
 
+<a name="2.2.7"></a>
+## 2.2.7 (2023-04-02)
+
+### Changed
+
+- 🔧 chore: don&#x27;t pack sourcemaps into tarball [[210be0a](https://github.com/guanghechen/react-kit/commit/210be0a592d1a619907e18e55dfb83233d0ddd20)]
+
+
+<a name="2.2.6"></a>
+## 2.2.6 (2023-04-02)
+
+### Changed
+
+- 🔧 chore: don&#x27;t pack src/ into tarball [[1f8d46c](https://github.com/guanghechen/react-kit/commit/1f8d46cc1e8f9e6c72f41aa008d17c641c10480c)]
+- ⬆️ chore: upgrade devDependencies [[55cf6ea](https://github.com/guanghechen/react-kit/commit/55cf6ea54505d6502110903f9f511a775ef6d27d)]
+
+
 <a name="2.2.5"></a>
 ## 2.2.5 (2023-03-11)
 
