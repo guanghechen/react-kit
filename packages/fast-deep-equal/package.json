@@ -1,6 +1,6 @@
 {
   "name": "@guanghechen/fast-deep-equal",
-  "version": "2.2.7",
+  "version": "2.3.0",
   "description": "The fastest deep equal with ES6 Map, Set and Typed arrays support.",
   "author": {
     "name": "guanghechen",
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/guanghechen/react-kit/tree/release-2.x.x",
+    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/fast-deep-equal@2.3.0",
     "directory": "packages/fast-deep-equal"
   },
-  "homepage": "https://github.com/guanghechen/react-kit/tree/release-2.x.x/packages/fast-deep-equal#readme",
+  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/fast-deep-equal@2.3.0/packages/fast-deep-equal#readme",
   "keywords": [
     "lineno string",
     "interval string"
