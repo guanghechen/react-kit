@@ -6,9 +6,12 @@
  * @returns
  */
 export function isEqual(x: any, y: any): boolean {
-  if (x === y) return true
+  if (typeof x !== typeof y) return false
 
-  if (x && y && typeof x == 'object' && typeof y == 'object') {
+  if (typeof x === 'object') {
+    if (x === null) return y === null
+    if (y === null) return x === null
+
     if (x.constructor !== y.constructor) return false
 
     if (Array.isArray(x)) {
@@ -44,8 +47,7 @@ export function isEqual(x: any, y: any): boolean {
     return true
   }
 
-  // true if both NaN, false otherwise
-  return Number.isNaN(x) && Number.isNaN(y)
+  return Object.is(x, y)
 }
 
 export default isEqual

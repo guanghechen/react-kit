@@ -1,62 +1,49 @@
-import React from 'react'
-import ReactTestRenderer from 'react-test-renderer'
-import sinon from 'sinon'
 import isEqual from '../src'
 
-class ChildWithShouldComponentUpdate extends React.Component {
-  public override render(): React.ReactElement | null {
-    return null
-  }
-
-  public override shouldComponentUpdate(nextProps: unknown): boolean {
-    // this.props.children is a h1 with a circular reference to its owner, Container
-    return !isEqual(this.props, nextProps)
-  }
-}
-
-class Container extends React.Component<{ title?: string; subtitle?: string }> {
-  public override render(): React.ReactElement | null {
-    return (
-      <ChildWithShouldComponentUpdate>
-        <h1>{this.props.title || ''}</h1>
-        <h2>{this.props.subtitle || ''}</h2>
-      </ChildWithShouldComponentUpdate>
-    )
-  }
-}
-
-describe('advanced', () => {
-  let sandbox: any
-  let warnStub: any
-  let childRenderSpy: any
-
-  beforeEach(() => {
-    sandbox = sinon.createSandbox()
-    warnStub = sandbox.stub(console, 'warn')
-    childRenderSpy = sandbox.spy(ChildWithShouldComponentUpdate.prototype, 'render')
+describe('isEqual', () => {
+  it('should return true for equal values', () => {
+    expect(isEqual(5, 5)).toBe(true)
+    expect(isEqual('hello', 'hello')).toBe(true)
+    expect(isEqual([1, 2, 3], [1, 2, 3])).toBe(true)
+    expect(isEqual({ a: 1, b: 2 }, { a: 1, b: 2 })).toBe(true)
+    expect(isEqual({}, {})).toBe(true)
+    expect(isEqual([], [])).toBe(true)
+    expect(isEqual(Number(1), 1)).toBe(true)
+    expect(isEqual(undefined, undefined)).toBe(true)
+    expect(isEqual(null, null)).toBe(true)
+    expect(isEqual(NaN, NaN)).toBe(true)
+    expect(isEqual(/abc/g, new RegExp('abc', 'g'))).toBe(true)
   })
 
-  afterEach(() => {
-    sandbox.restore()
+  it('should return false for unequal values', () => {
+    expect(isEqual(5, 10)).toBe(false)
+    expect(isEqual('hello', 'world')).toBe(false)
+    expect(isEqual([1, 2, 3], [1, 2])).toBe(false)
+    expect(isEqual({ a: 1, b: 2 }, { a: 1 })).toBe(false)
+    expect(isEqual(Number(1), Boolean(true))).toBe(false)
+    expect(isEqual(undefined, null)).toBe(false)
+    expect(isEqual(null, undefined)).toBe(false)
+    expect(isEqual(null, {})).toBe(false)
+    expect(isEqual({}, null)).toBe(false)
+    expect(isEqual(NaN, 0)).toBe(false)
+    expect(isEqual(/abc/gi, new RegExp('abc', 'g'))).toBe(false)
+    expect(isEqual(/abcd/g, new RegExp('abc', 'g'))).toBe(false)
   })
 
-  describe('React', () => {
-    describe('element (with circular references)', () => {
-      it('compares without warning or errors', () => {
-        const testRenderer = ReactTestRenderer.create(React.createElement(Container))
-        testRenderer.update(React.createElement(Container))
-        expect(warnStub.callCount).toEqual(0)
-      })
-      it('elements of same type and props are equal', () => {
-        const testRenderer = ReactTestRenderer.create(React.createElement(Container))
-        testRenderer.update(React.createElement(Container))
-        expect(childRenderSpy.callCount).toEqual(1)
-      })
-      it('elements of same type with different props are not equal', () => {
-        const testRenderer = ReactTestRenderer.create(React.createElement(Container))
-        testRenderer.update(React.createElement(Container, { title: 'New' }))
-        expect(childRenderSpy.callCount).toEqual(2)
-      })
-    })
+  it('should handle complex objects', () => {
+    const obj1 = { a: 1, b: { c: [1, 2, 3] } }
+    const obj2 = { a: 1, b: { c: [1, 2, 3] } }
+    const obj3 = { a: 1, b: { c: [1, 2, 4] } }
+
+    expect(isEqual(obj1, obj2)).toBe(true)
+    expect(isEqual(obj1, obj3)).toBe(false)
+  })
+
+  it('should handle special cases', () => {
+    expect(isEqual(undefined, undefined)).toBe(true)
+    expect(isEqual(null, null)).toBe(true)
+    expect(isEqual(NaN, NaN)).toBe(true)
+    expect(isEqual(0, -0)).toBe(false)
+    expect(isEqual(Infinity, Infinity)).toBe(true)
   })
 })

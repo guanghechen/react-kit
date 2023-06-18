@@ -44,12 +44,9 @@
     "test": "node --experimental-vm-modules ../../node_modules/.bin/jest --config ../../jest.config.mjs --rootDir ."
   },
   "devDependencies": {
-    "@types/react-test-renderer": "^18.0.0",
     "cross-env": "^7.0.3",
     "react": "^18.2.0",
-    "react-test-renderer": "^18.2.0",
     "rimraf": "^5.0.1",
-    "rollup": "^3.25.1",
-    "sinon": "^15.1.2"
+    "rollup": "^3.25.1"
   }
 }
