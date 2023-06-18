@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "sourceMap": true,
     "paths": {
+      "@guanghechen/common-util": ["packages/common-util/src"],
       "@guanghechen/dom-blob": ["packages/dom-blob/src"],
       "@guanghechen/fast-deep-equal": ["packages/fast-deep-equal/src"],
       "@guanghechen/parse-lineno": ["packages/parse-lineno/src"],
