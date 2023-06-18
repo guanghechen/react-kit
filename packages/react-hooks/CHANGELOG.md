@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-hooks@2.3.0...@guanghechen/react-hooks@2.3.1) (2023-06-18)
+
+
+### Performance Improvements
+
+* :arrow_up  chore: upgrade dependencies ([bb0c9b2](https://github.com/guanghechen/react-kit/commit/bb0c9b2c439db2406520e1d340ff5ea7a5a6c187))
+* 🎨 dd new hook 'useBeforeUnloadEffect' ([796a5c2](https://github.com/guanghechen/react-kit/commit/796a5c292645e4365d20986fe6334628cc0123c5))
+
+
+
+
+
 # 2.3.0 (2023-05-13)
 
 

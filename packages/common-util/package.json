@@ -1,16 +1,16 @@
 {
   "name": "@guanghechen/common-util",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": {
     "name": "guanghechen",
     "url": "https://github.com/guanghechen/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/common-util@0.0.0",
+    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/common-util@0.1.0",
     "directory": "packages/common-util"
   },
-  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/common-util@0.0.0/packages/common-util#readme",
+  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/common-util@0.1.0/packages/common-util#readme",
   "keywords": [
     "utils for browser and node.js"
   ],

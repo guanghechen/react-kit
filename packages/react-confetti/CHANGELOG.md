@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.1](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-confetti@2.3.0...@guanghechen/react-confetti@2.3.1) (2023-06-18)
+
+
+### Performance Improvements
+
+* :arrow_up  chore: upgrade dependencies ([bb0c9b2](https://github.com/guanghechen/react-kit/commit/bb0c9b2c439db2406520e1d340ff5ea7a5a6c187))
+
+
+
+
+
 # 2.3.0 (2023-05-13)
 
 
