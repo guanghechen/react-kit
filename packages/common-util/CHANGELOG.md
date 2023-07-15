@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/guanghechen/react-kit/compare/@guanghechen/common-util@0.1.0...@guanghechen/common-util@0.2.0) (2023-07-15)
+
+
+### Features
+
+* ✨ add buildObjectFromEntries ([9289140](https://github.com/guanghechen/react-kit/commit/928914029a07e797067db975c402061125ccbc81))
+
+
+
+
+
 # 0.1.0 (2023-06-18)
 
 

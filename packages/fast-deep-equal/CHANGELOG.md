@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.2](https://github.com/guanghechen/react-kit/compare/@guanghechen/fast-deep-equal@2.3.1...@guanghechen/fast-deep-equal@2.3.2) (2023-07-15)
+
+
+### Bug Fixes
+
+* 🐛 fix bugs when compare empty object ([649f15e](https://github.com/guanghechen/react-kit/commit/649f15ea7173ee8101cee2cefc9ac0fec7cdf5c2))
+
+
+### Performance Improvements
+
+* ⬆️ upgrade dependencies ([875863f](https://github.com/guanghechen/react-kit/commit/875863f23880ffff41d4b8fcabd312ce5c380f77))
+
+
+
+
+
 ## [2.3.1](https://github.com/guanghechen/react-kit/compare/@guanghechen/fast-deep-equal@2.3.0...@guanghechen/fast-deep-equal@2.3.1) (2023-06-18)
 
 

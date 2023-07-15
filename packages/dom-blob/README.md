@@ -1,6 +1,6 @@
 <header>
   <h1 align="center">
-    <a href="https://github.com/guanghechen/react-kit/tree/@guanghechen/dom-blob@2.3.1/packages/dom-blob#readme">@guanghechen/dom-blob</a>
+    <a href="https://github.com/guanghechen/react-kit/tree/@guanghechen/dom-blob@2.3.2/packages/dom-blob#readme">@guanghechen/dom-blob</a>
   </h1>
   <div align="center">
     <a href="https://www.npmjs.com/package/@guanghechen/dom-blob">
@@ -71,4 +71,4 @@ Utilities for processing blob objects (i.e., download / create).
   browser.
 
 
-[homepage]: https://github.com/guanghechen/react-kit/tree/@guanghechen/dom-blob@2.3.1/packages/dom-blob#readme
+[homepage]: https://github.com/guanghechen/react-kit/tree/@guanghechen/dom-blob@2.3.2/packages/dom-blob#readme
