@@ -7,6 +7,7 @@
  */
 export function isEqual(x: any, y: any): boolean {
   if (typeof x !== typeof y) return false
+  if (Object.is(x, y)) return true
 
   if (typeof x === 'object') {
     if (x === null) return y === null
@@ -47,7 +48,7 @@ export function isEqual(x: any, y: any): boolean {
     return true
   }
 
-  return Object.is(x, y)
+  return false
 }
 
 export default isEqual
