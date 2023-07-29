@@ -22,6 +22,7 @@ export const useThrowRandomConfetti = (): (() => Promise<void>) => {
   React.useEffect(() => {
     confettiRef.current = new JSConfetti()
     return () => {
+      confettiRef.current?.clearCanvas()
       confettiRef.current = null
     }
   }, [])
@@ -33,10 +34,7 @@ export const useThrowRandomConfetti = (): (() => Promise<void>) => {
     const confetti = confettiRef.current
     const confettiColors = randomConfettiColors()
 
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
     const xs: boolean = typeof window === 'undefined' ? true : window.screen.width <= 900
-
     const config: IAddConfettiConfig = {
       confettiColors,
       confettiRadius: xs ? 4 : 8,
