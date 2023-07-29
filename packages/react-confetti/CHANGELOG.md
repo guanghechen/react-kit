@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.3](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-confetti@2.3.2...@guanghechen/react-confetti@2.3.3) (2023-07-29)
+
+
+### Performance Improvements
+
+* clear canvas when unmount component ([f2fa9b2](https://github.com/guanghechen/react-kit/commit/f2fa9b2ad3725261f55b5757b480b0f904e02450))
+* ⬆️ upgrade devDependencies ([9e53d3a](https://github.com/guanghechen/react-kit/commit/9e53d3a6abdbe7a1590de360621046652ffb841c))
+
+
+
+
+
 ## [2.3.2](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-confetti@2.3.1...@guanghechen/react-confetti@2.3.2) (2023-07-15)
 
 

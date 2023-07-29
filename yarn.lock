@@ -582,7 +582,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@guanghechen/fast-deep-equal@^2.3.2, @guanghechen/fast-deep-equal@workspace:packages/fast-deep-equal":
+"@guanghechen/fast-deep-equal@^2.3.2, @guanghechen/fast-deep-equal@^2.3.3, @guanghechen/fast-deep-equal@workspace:packages/fast-deep-equal":
   version: 0.0.0-use.local
   resolution: "@guanghechen/fast-deep-equal@workspace:packages/fast-deep-equal"
   dependencies:
@@ -668,11 +668,22 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@guanghechen/react-hooks@^2.3.2, @guanghechen/react-hooks@workspace:packages/react-hooks":
+"@guanghechen/react-hooks@npm:^2.3.2":
+  version: 2.3.2
+  resolution: "@guanghechen/react-hooks@npm:2.3.2"
+  dependencies:
+    "@guanghechen/fast-deep-equal": ^2.3.2
+  peerDependencies:
+    react: ^17.0.0 || ^18.0.0
+  checksum: d9a6c8da0cdec0a68416950caa90224a823cd09f4b51fbde665cde445c624342ea661a61504f4d685603cf9ebe9f90fdcc3b7636f065d407aa5a8af5ac663e07
+  languageName: node
+  linkType: hard
+
+"@guanghechen/react-hooks@workspace:packages/react-hooks":
   version: 0.0.0-use.local
   resolution: "@guanghechen/react-hooks@workspace:packages/react-hooks"
   dependencies:
-    "@guanghechen/fast-deep-equal": ^2.3.2
+    "@guanghechen/fast-deep-equal": ^2.3.3
     cross-env: ^7.0.3
     rimraf: ^5.0.1
     rollup: ^3.27.0
@@ -723,8 +734,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@guanghechen/react-viewmodel@workspace:packages/react-viewmodel"
   dependencies:
-    "@guanghechen/fast-deep-equal": ^2.3.2
-    "@guanghechen/viewmodel": ^0.0.0
+    "@guanghechen/fast-deep-equal": ^2.3.3
+    "@guanghechen/viewmodel": ^0.1.0
     "@types/use-sync-external-store": ^0.0.3
     use-sync-external-store: ^1.2.0
   peerDependencies:
@@ -774,7 +785,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@guanghechen/viewmodel@^0.0.0, @guanghechen/viewmodel@workspace:packages/viewmodel":
+"@guanghechen/viewmodel@^0.1.0, @guanghechen/viewmodel@workspace:packages/viewmodel":
   version: 0.0.0-use.local
   resolution: "@guanghechen/viewmodel@workspace:packages/viewmodel"
   dependencies:
