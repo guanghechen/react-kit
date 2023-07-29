@@ -43,12 +43,16 @@ describe('Observable', () => {
     observable.subscribe(subscriber0)
 
     expect(observable.getSnapshot()).toEqual(1)
-    expect(subscriber0.value).toEqual(1)
+    expect(subscriber0.value).toEqual(0)
     expect(observable.disposed).toEqual(false)
+
+    await delay(100)
+    expect(observable.getSnapshot()).toEqual(1)
+    expect(subscriber0.value).toEqual(0)
 
     observable.next(2)
     expect(observable.getSnapshot()).toEqual(2)
-    expect(subscriber0.value).toEqual(1)
+    expect(subscriber0.value).toEqual(0)
 
     await delay(100)
     expect(observable.getSnapshot()).toEqual(2)
@@ -105,12 +109,12 @@ describe('Observable', () => {
     const unsubscribable = observable.subscribe(subscriber)
 
     expect(observable.getSnapshot()).toEqual(1)
-    expect(subscriber.value).toEqual(1)
+    expect(subscriber.value).toEqual(0)
     expect(observable.disposed).toEqual(false)
 
     observable.next(2)
     expect(observable.getSnapshot()).toEqual(2)
-    expect(subscriber.value).toEqual(1)
+    expect(subscriber.value).toEqual(0)
 
     await delay(100)
     expect(observable.getSnapshot()).toEqual(2)
@@ -138,24 +142,24 @@ describe('Observable', () => {
     observable.subscribe(subscriber)
 
     expect(observable.getSnapshot()).toEqual(1)
-    expect(subscriber.value).toEqual(1)
+    expect(subscriber.value).toEqual(0)
     expect(observable.disposed).toEqual(false)
 
     observable.next(2)
     expect(observable.getSnapshot()).toEqual(2)
-    expect(subscriber.value).toEqual(1)
+    expect(subscriber.value).toEqual(0)
     observable.next(3)
     expect(observable.getSnapshot()).toEqual(3)
-    expect(subscriber.value).toEqual(1)
+    expect(subscriber.value).toEqual(0)
     observable.next(4)
     expect(observable.getSnapshot()).toEqual(4)
-    expect(subscriber.value).toEqual(1)
+    expect(subscriber.value).toEqual(0)
     observable.next(5)
     expect(observable.getSnapshot()).toEqual(5)
-    expect(subscriber.value).toEqual(1)
+    expect(subscriber.value).toEqual(0)
     observable.next(6)
     expect(observable.getSnapshot()).toEqual(6)
-    expect(subscriber.value).toEqual(1)
+    expect(subscriber.value).toEqual(0)
 
     await delay(100)
     expect(observable.getSnapshot()).toEqual(6)

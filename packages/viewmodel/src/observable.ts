@@ -60,7 +60,6 @@ export class Observable<T extends Readonly<IObservableValue>> implements IObserv
       case ObservableStatus.AVAILABLE: {
         if (!this._subscribers.includes(subscriber)) {
           this._subscribers = [...this._subscribers, subscriber]
-          subscriber.next(this._value, this._value)
         }
 
         return {
