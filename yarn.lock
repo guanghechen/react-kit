@@ -719,6 +719,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@guanghechen/react-viewmodel@workspace:packages/react-viewmodel":
+  version: 0.0.0-use.local
+  resolution: "@guanghechen/react-viewmodel@workspace:packages/react-viewmodel"
+  dependencies:
+    "@guanghechen/fast-deep-equal": ^2.3.2
+    "@guanghechen/viewmodel": ^0.0.0
+  peerDependencies:
+    react: ">= 18.0.0"
+  languageName: unknown
+  linkType: soft
+
 "@guanghechen/rollup-config@npm:^5.0.2":
   version: 5.0.3
   resolution: "@guanghechen/rollup-config@npm:5.0.3"
@@ -761,7 +772,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@guanghechen/viewmodel@workspace:packages/viewmodel":
+"@guanghechen/viewmodel@^0.0.0, @guanghechen/viewmodel@workspace:packages/viewmodel":
   version: 0.0.0-use.local
   resolution: "@guanghechen/viewmodel@workspace:packages/viewmodel"
   dependencies:

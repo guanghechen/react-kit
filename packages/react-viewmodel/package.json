@@ -1,0 +1,56 @@
+{
+  "name": "@guanghechen/react-viewmodel",
+  "version": "0.0.0",
+  "description": "React viewmodel.",
+  "author": {
+    "name": "guanghechen",
+    "url": "https://github.com/guanghechen/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-viewmodel@0.0.0",
+    "directory": "packages/react-viewmodel"
+  },
+  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-viewmodel@0.0.0/packages/react-viewmodel#readme",
+  "keywords": [
+    "viewmodel",
+    "react"
+  ],
+  "type": "module",
+  "exports": {
+    "types": "./lib/types/index.d.ts",
+    "require": "./lib/cjs/index.cjs",
+    "import": "./lib/esm/index.mjs"
+  },
+  "types": "./lib/types/index.d.ts",
+  "main": "./lib/cjs/index.cjs",
+  "module": "./lib/esm/index.mjs",
+  "source": "./src/index.ts",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 16.0.0"
+  },
+  "files": [
+    "lib/",
+    "!lib/**/*.map",
+    "package.json",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "rimraf lib/ && cross-env NODE_ENV=production rollup -c ../../rollup.config.mjs",
+    "prepublishOnly": "yarn build"
+  },
+  "dependencies": {
+    "@guanghechen/fast-deep-equal": "^2.3.2",
+    "@guanghechen/viewmodel": "^0.0.0",
+    "use-sync-external-store": "^1.2.0"
+  },
+  "peerDependencies": {
+    "react": ">= 18.0.0"
+  },
+  "devDependencies": {
+    "@types/use-sync-external-store": "^0.0.3"
+  }
+}
