@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDeepCompareCallback } from './useDeepCompareCallback'
+import { useEventCallback } from './useEventCallback'
 import { useRefreshRef } from './useRefreshRef'
 
 export function useBeforeUnloadEffect(
@@ -16,12 +17,11 @@ export function useBeforeUnloadEffect(
 
 export function useBeforeUnloadAsyncEffect(
   fn: (event: BeforeUnloadEvent) => Promise<void>,
-  deps: React.DependencyList,
   preventDefault = true,
 ): void {
   const preventDefaultRef = useRefreshRef<boolean>(preventDefault)
 
-  const beforeunload = useDeepCompareCallback(async (event: BeforeUnloadEvent) => {
+  const beforeunload = useEventCallback(async (event: BeforeUnloadEvent) => {
     if (preventDefaultRef.current === false) {
       return fn(event)
     }
@@ -36,7 +36,7 @@ export function useBeforeUnloadAsyncEffect(
       // eslint-disable-next-line no-param-reassign
       delete event.returnValue
     }
-  }, deps)
+  })
 
   React.useLayoutEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
