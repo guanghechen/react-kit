@@ -1,5 +1,5 @@
 import type { IComputableValue, IComputed } from '@guanghechen/viewmodel'
-import { useSyncExternalStore } from 'use-sync-external-store'
+import { useSyncExternalStore } from './useSyncExternalStore'
 
 export function useComputed<T extends IComputableValue>(computed$: IComputed<T>): T {
   const { getSnapshot, getServerSnapshot, subscribeStateChange } = computed$

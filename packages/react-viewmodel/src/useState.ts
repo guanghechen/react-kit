@@ -1,6 +1,6 @@
 import type { IStatableValue, IState } from '@guanghechen/viewmodel'
 import type React from 'react'
-import { useSyncExternalStore } from 'use-sync-external-store'
+import { useSyncExternalStore } from './useSyncExternalStore'
 
 export function useStateValue<T extends IStatableValue>(state$: IState<T>): T {
   const { getSnapshot, getServerSnapshot, subscribeStateChange } = state$
