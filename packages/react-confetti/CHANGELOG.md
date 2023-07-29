@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.4](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-confetti@2.3.3...@guanghechen/react-confetti@2.3.4) (2023-07-29)
+
+
+### Bug Fixes
+
+* 🐛 esm error ([b2276bf](https://github.com/guanghechen/react-kit/commit/b2276bf3eb7ea99beb082db0059e261890293a1e))
+
+
+
+
+
 ## [2.3.3](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-confetti@2.3.2...@guanghechen/react-confetti@2.3.3) (2023-07-29)
 
 

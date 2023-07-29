@@ -582,7 +582,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@guanghechen/fast-deep-equal@^2.3.2, @guanghechen/fast-deep-equal@^2.3.3, @guanghechen/fast-deep-equal@workspace:packages/fast-deep-equal":
+"@guanghechen/fast-deep-equal@^2.3.3, @guanghechen/fast-deep-equal@workspace:packages/fast-deep-equal":
   version: 0.0.0-use.local
   resolution: "@guanghechen/fast-deep-equal@workspace:packages/fast-deep-equal"
   dependencies:
@@ -658,7 +658,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@guanghechen/react-confetti@workspace:packages/react-confetti"
   dependencies:
-    "@guanghechen/react-hooks": ^2.3.2
+    "@guanghechen/react-hooks": ^3.0.1
     cross-env: ^7.0.3
     js-confetti: ^0.11.0
     rimraf: ^5.0.1
@@ -668,18 +668,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@guanghechen/react-hooks@npm:^2.3.2":
-  version: 2.3.2
-  resolution: "@guanghechen/react-hooks@npm:2.3.2"
-  dependencies:
-    "@guanghechen/fast-deep-equal": ^2.3.2
-  peerDependencies:
-    react: ^17.0.0 || ^18.0.0
-  checksum: d9a6c8da0cdec0a68416950caa90224a823cd09f4b51fbde665cde445c624342ea661a61504f4d685603cf9ebe9f90fdcc3b7636f065d407aa5a8af5ac663e07
-  languageName: node
-  linkType: hard
-
-"@guanghechen/react-hooks@workspace:packages/react-hooks":
+"@guanghechen/react-hooks@^3.0.1, @guanghechen/react-hooks@workspace:packages/react-hooks":
   version: 0.0.0-use.local
   resolution: "@guanghechen/react-hooks@workspace:packages/react-hooks"
   dependencies:

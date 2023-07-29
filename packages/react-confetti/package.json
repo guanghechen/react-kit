@@ -1,6 +1,6 @@
 {
   "name": "@guanghechen/react-confetti",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "description": "Simple confetti particle in react.",
   "author": {
     "name": "guanghechen",
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-confetti@2.3.3",
+    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-confetti@2.3.4",
     "directory": "packages/react-confetti"
   },
-  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-confetti@2.3.3/packages/react-confetti#readme",
+  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-confetti@2.3.4/packages/react-confetti#readme",
   "keywords": [
     "confetti",
     "react confetti"
