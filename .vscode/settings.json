@@ -6,7 +6,10 @@
     "mtsx",
     "Parens",
     "pinst",
-    "postpublish"
+    "postpublish",
+    "unsubscribable",
+    "unsubscribables",
+    "viewmodel"
   ],
   "files.associations": {
     ".prettierrc": "yaml"

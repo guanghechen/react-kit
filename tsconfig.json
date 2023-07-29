@@ -10,6 +10,7 @@
       "@guanghechen/parse-lineno": ["packages/parse-lineno/src"],
       "@guanghechen/react-confetti": ["packages/react-confetti/src"],
       "@guanghechen/react-hooks": ["packages/react-hooks/src"],
+      "@guanghechen/viewmodel": ["packages/viewmodel/src"],
       "jest.helper": ["jest.helper.mts"]
     }
   },
