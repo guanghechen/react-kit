@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-viewmodel@0.1.1...@guanghechen/react-viewmodel@0.1.2) (2023-07-29)
+
+
+### Bug Fixes
+
+* 🐛 use use-sync-external-store source code ([0a65ca5](https://github.com/guanghechen/react-kit/commit/0a65ca5aff0a5c0c430b25b2eae4840f9dc23327))
+
+
+
+
+
 ## [0.1.1](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-viewmodel@0.1.0...@guanghechen/react-viewmodel@0.1.1) (2023-07-29)
 
 
