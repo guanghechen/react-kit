@@ -658,7 +658,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@guanghechen/react-confetti@workspace:packages/react-confetti"
   dependencies:
-    "@guanghechen/react-hooks": ^3.0.1
+    "@guanghechen/react-hooks": ^3.0.2
     cross-env: ^7.0.3
     js-confetti: ^0.11.0
     rimraf: ^5.0.1
@@ -668,7 +668,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@guanghechen/react-hooks@^3.0.1, @guanghechen/react-hooks@workspace:packages/react-hooks":
+"@guanghechen/react-hooks@^3.0.2, @guanghechen/react-hooks@workspace:packages/react-hooks":
   version: 0.0.0-use.local
   resolution: "@guanghechen/react-hooks@workspace:packages/react-hooks"
   dependencies:
