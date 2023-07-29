@@ -1,15 +1,16 @@
-import React from 'react'
+import type { DependencyList } from 'react'
+import { useLayoutEffect } from 'react'
 import { useDeepCompareCallback } from './useDeepCompareCallback'
 import { useEventCallback } from './useEventCallback'
 import { useRefreshRef } from './useRefreshRef'
 
 export function useBeforeUnloadEffect(
   fn: (event: BeforeUnloadEvent) => void,
-  deps: React.DependencyList,
+  deps: DependencyList,
 ): void {
   const beforeunload = useDeepCompareCallback(fn, deps)
 
-  React.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     window.addEventListener('beforeunload', beforeunload)
     return () => window.removeEventListener('beforeunload', beforeunload)
   }, [beforeunload])
@@ -38,7 +39,7 @@ export function useBeforeUnloadAsyncEffect(
     }
   })
 
-  React.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     window.addEventListener('beforeunload', beforeunload)
     // eslint-disable-next-line @typescript-eslint/no-misused-promises

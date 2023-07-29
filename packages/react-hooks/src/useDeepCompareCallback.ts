@@ -1,5 +1,6 @@
 import isEqual from '@guanghechen/fast-deep-equal'
-import React from 'react'
+import type { DependencyList } from 'react'
+import { useCallback, useRef } from 'react'
 
 /**
  * Deep compare version of React.useCallback
@@ -8,14 +9,14 @@ import React from 'react'
  */
 export function useDeepCompareCallback<T extends (...args: any[]) => any>(
   fn: T,
-  deps: React.DependencyList,
+  deps: DependencyList,
 ): T {
-  const signal = React.useRef<number>(0)
-  const prevDeps = React.useRef<React.DependencyList>(deps)
+  const signal = useRef<number>(0)
+  const prevDeps = useRef<React.DependencyList>(deps)
 
   if (!isEqual(prevDeps.current, deps)) signal.current += 1
   prevDeps.current = deps
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  return React.useCallback(fn, [signal.current])
+  return useCallback(fn, [signal.current])
 }

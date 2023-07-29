@@ -8,21 +8,21 @@ import type {
   IViewModel,
   IViewModelTicker,
 } from '@guanghechen/viewmodel'
-import React from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 export function useSelect<M extends IViewModel, T extends IComputableValue>(
   viewmodel: M,
   transform: (valueMap: IValueMap<M>) => T,
   equals: IEquals<T> = isEqual,
 ): T {
-  const transformRef = React.useRef(transform)
+  const transformRef = useRef(transform)
   transformRef.current = transform
 
-  const equalsRef = React.useRef(equals)
+  const equalsRef = useRef(equals)
   equalsRef.current = equals
 
-  const tickerItem = React.useMemo<IViewModelTicker>(() => viewmodel.ticker(undefined), [viewmodel])
-  const getSnapshot = React.useCallback((): T => {
+  const tickerItem = useMemo<IViewModelTicker>(() => viewmodel.ticker(undefined), [viewmodel])
+  const getSnapshot = useCallback((): T => {
     const valueMap: IValueMap<M> = {} as unknown as IValueMap<M>
     for (const key of tickerItem.keys as Array<keyof M>) {
       const observable = viewmodel[key] as IObservable<any>
@@ -31,9 +31,9 @@ export function useSelect<M extends IViewModel, T extends IComputableValue>(
     return transformRef.current(valueMap)
   }, [tickerItem, viewmodel])
 
-  const [value, setValue] = React.useState(getSnapshot)
+  const [value, setValue] = useState(getSnapshot)
 
-  React.useEffect(() => {
+  useEffect(() => {
     const unsubscribable = tickerItem.ticker.subscribe({
       next: () => {
         const nextValue = getSnapshot()
@@ -56,17 +56,14 @@ export function useSelectAccurately<
   selector: (valueMap: Pick<IValueMap<M>, K>) => T,
   equals: IEquals<T> = isEqual,
 ): T {
-  const selectorRef = React.useRef(selector)
+  const selectorRef = useRef(selector)
   selectorRef.current = selector
 
-  const equalsRef = React.useRef(equals)
+  const equalsRef = useRef(equals)
   equalsRef.current = equals
 
-  const tickerItem = React.useMemo<IViewModelTicker>(
-    () => viewmodel.ticker(keys),
-    [viewmodel, keys],
-  )
-  const getSnapshot = React.useCallback((): T => {
+  const tickerItem = useMemo<IViewModelTicker>(() => viewmodel.ticker(keys), [viewmodel, keys])
+  const getSnapshot = useCallback((): T => {
     const valueMap: Pick<IValueMap<M>, K> = {} as unknown as Pick<IValueMap<M>, K>
     for (const key of tickerItem.keys as K[]) {
       const observable = viewmodel[key] as IObservable<any>
@@ -75,9 +72,9 @@ export function useSelectAccurately<
     return selectorRef.current(valueMap)
   }, [tickerItem, viewmodel])
 
-  const [value, setValue] = React.useState(getSnapshot)
+  const [value, setValue] = useState(getSnapshot)
 
-  React.useEffect(() => {
+  useEffect(() => {
     const unsubscribable = tickerItem.ticker.subscribe({
       next: () => {
         const nextValue = getSnapshot()

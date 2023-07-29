@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useRef } from 'react'
 
 type ICallback = () => void
 
@@ -8,13 +8,13 @@ type ICallback = () => void
  * @param duration
  */
 export function useInterval(callback: ICallback, duration: number): void {
-  const callbackRef = React.useRef<ICallback>(callback)
+  const callbackRef = useRef<ICallback>(callback)
 
-  React.useEffect(() => {
+  useEffect(() => {
     callbackRef.current = callback
   }, [callback])
 
-  React.useEffect(() => {
+  useEffect(() => {
     const tick: ICallback = () => {
       if (callbackRef.current === undefined) return
       callbackRef.current()

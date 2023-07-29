@@ -1,6 +1,6 @@
 import { useEventCallback } from '@guanghechen/react-hooks'
 import JSConfetti from 'js-confetti'
-import React from 'react'
+import { useEffect, useRef } from 'react'
 
 type IAddConfettiConfig = Exclude<Parameters<JSConfetti['addConfetti']>[0], undefined>
 
@@ -16,10 +16,10 @@ const randomConfettiColors = (): IAddConfettiConfig['confettiColors'] => {
 }
 
 export const useThrowRandomConfetti = (): (() => Promise<void>) => {
-  const lockRef = React.useRef<boolean>(false)
-  const confettiRef = React.useRef<JSConfetti | null>(null)
+  const lockRef = useRef<boolean>(false)
+  const confettiRef = useRef<JSConfetti | null>(null)
 
-  React.useEffect(() => {
+  useEffect(() => {
     confettiRef.current = new JSConfetti()
     return () => {
       confettiRef.current?.clearCanvas()

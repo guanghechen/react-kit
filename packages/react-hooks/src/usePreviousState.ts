@@ -1,4 +1,4 @@
-import React from 'react'
+import { useEffect, useRef } from 'react'
 
 /**
  * Use previous state.
@@ -6,8 +6,8 @@ import React from 'react'
  * @returns
  */
 export function usePreviousState<T = unknown>(value: T): T {
-  const ref = React.useRef<T>(value)
-  React.useEffect(() => {
+  const ref = useRef<T>(value)
+  useEffect(() => {
     ref.current = value
   }, [value])
   return ref.current

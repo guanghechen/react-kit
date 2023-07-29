@@ -1,4 +1,5 @@
-import React, { useDebugValue, useEffect, useLayoutEffect, useState } from 'react'
+import * as React from 'react'
+import { useDebugValue, useEffect, useLayoutEffect, useState } from 'react'
 
 // Intentionally not using named imports because Rollup uses dynamic
 // dispatch for CommonJS interop named imports.
