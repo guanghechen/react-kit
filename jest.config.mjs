@@ -11,7 +11,6 @@ export default async function () {
 
   const config = {
     ...baseConfig,
-    preset: 'ts-jest/presets/default-esm',
     collectCoverageFrom: [...(baseConfig.collectCoverageFrom ?? [])],
     coveragePathIgnorePatterns: [],
     coverageThreshold: {
