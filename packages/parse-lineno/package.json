@@ -1,6 +1,6 @@
 {
   "name": "@guanghechen/parse-lineno",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "description": "Parse something like '1,3-10' to numbers or intervals",
   "author": {
     "name": "guanghechen",
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/parse-lineno@2.3.3",
+    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/parse-lineno@2.3.4",
     "directory": "packages/parse-lineno"
   },
-  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/parse-lineno@2.3.3/packages/parse-lineno#readme",
+  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/parse-lineno@2.3.4/packages/parse-lineno#readme",
   "keywords": [
     "lineno string",
     "interval string"

@@ -1,6 +1,6 @@
 {
   "name": "@guanghechen/react-hooks",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Some custom react hooks.",
   "author": {
     "name": "guanghechen",
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-hooks@3.0.2",
+    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-hooks@3.0.3",
     "directory": "packages/react-hooks"
   },
-  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-hooks@3.0.2/packages/react-hooks#readme",
+  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-hooks@3.0.3/packages/react-hooks#readme",
   "keywords": [
     "react hooks",
     "useDeepCompareCallback",
@@ -48,7 +48,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@guanghechen/fast-deep-equal": "^2.3.3"
+    "@guanghechen/fast-deep-equal": "^2.3.4"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0"
