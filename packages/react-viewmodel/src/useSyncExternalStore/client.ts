@@ -86,6 +86,7 @@ export function useSyncExternalStore<T>(
       // Force a re-render.
       forceUpdate({ inst })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [subscribe, value, getSnapshot])
 
   useEffect(() => {
@@ -110,6 +111,7 @@ export function useSyncExternalStore<T>(
     }
     // Subscribe to the store and return a clean-up function.
     return subscribe(handleStoreChange)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [subscribe])
 
   useDebugValue(value)

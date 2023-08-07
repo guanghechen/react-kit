@@ -52,6 +52,6 @@
   "devDependencies": {
     "cross-env": "^7.0.3",
     "rimraf": "^5.0.1",
-    "rollup": "^3.27.0"
+    "rollup": "^3.27.2"
   }
 }
