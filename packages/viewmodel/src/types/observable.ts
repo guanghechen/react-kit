@@ -9,6 +9,7 @@ export interface IObservable<T extends IObservableValue> extends ISubscribable<T
   readonly equals: IEquals<T>
   getSnapshot(): T
   next(value: T): void
+  registerDisposable<T extends IDisposable>(disposable: T): void
 }
 
 export type IValueList<T extends Array<IObservable<any>>> = {

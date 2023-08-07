@@ -3,19 +3,19 @@ import { Ticker } from './ticker'
 import type {
   IComputableValue,
   IComputed,
+  IDisposable,
   IObservable,
   IObservableOptions,
   ISubscriber,
   IValueList,
 } from './types'
+import { buildDisposable } from './util'
 
 export class Computed<T extends Readonly<IComputableValue>> implements IComputed<T> {
   protected readonly _observable: IObservable<T>
-  protected readonly _onDispose: () => void
 
-  constructor(observable: IObservable<T>, onDispose: () => void) {
+  constructor(observable: IObservable<T>) {
     this._observable = observable
-    this._onDispose = onDispose
   }
 
   public static fromObservables<S extends Array<IObservable<any>>, T extends IComputableValue>(
@@ -31,24 +31,25 @@ export class Computed<T extends Readonly<IComputableValue>> implements IComputed
       return transform(values)
     }
 
-    const observable: IObservable<T> = new Observable<T>(getSnapshot(), options)
+    const observable = new Observable<T>(getSnapshot(), options)
+    observable.registerDisposable(ticker)
+
     ticker.subscribe({
       next: () => {
         if (!observable.disposed) observable.next(getSnapshot())
       },
       complete: () => observable.dispose(),
     })
-    return new Computed<T>(observable, () => ticker.dispose())
+    return new Computed<T>(observable)
   }
 
   public get disposed(): boolean {
     return this._observable.disposed
   }
 
-  public dispose = (): void => {
+  public dispose(): void {
     if (!this._observable.disposed) {
       this._observable.dispose()
-      this._onDispose()
     }
   }
 
@@ -66,6 +67,8 @@ export class Computed<T extends Readonly<IComputableValue>> implements IComputed
       complete: () => {},
     }
     const unsubscribable = this._observable.subscribe(subscriber)
-    return () => unsubscribable.unsubscribe()
+    const disposable: IDisposable = buildDisposable(() => unsubscribable.unsubscribe())
+    this._observable.registerDisposable(disposable)
+    return () => disposable.dispose()
   }
 }

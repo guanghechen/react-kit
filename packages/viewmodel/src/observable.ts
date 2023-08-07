@@ -1,4 +1,4 @@
-import { ObservableStatus } from './constant'
+import { Disposable } from './disposable'
 import type {
   IEquals,
   IObservable,
@@ -8,38 +8,38 @@ import type {
   IUnsubscribable,
 } from './types'
 
-export class Observable<T extends Readonly<IObservableValue>> implements IObservable<T> {
-  public readonly equals: IEquals<T>
+export class Observable<T extends Readonly<IObservableValue>>
+  extends Disposable
+  implements IObservable<T>
+{
   public readonly delay: number
+  public readonly equals: IEquals<T>
   protected _subscribers: ReadonlyArray<ISubscriber<T>>
-  protected _status: ObservableStatus
   protected _value: T
-  protected _nextCaller: (() => void) | undefined
   protected _nextCallerTimer: ReturnType<typeof setTimeout> | undefined
+  protected _nextCaller: (() => void) | undefined
 
   constructor(defaultValue: T, options: IObservableOptions<T> = {}) {
+    super()
     this._subscribers = []
-    this._status = ObservableStatus.AVAILABLE
     this._value = defaultValue
-    this._nextCallerTimer = undefined
     this.delay = Math.max(0, Number(options.delay) || 0)
     this.equals = options.equals ?? ((x: T, y: T) => Object.is(x, y))
   }
 
-  public get disposed(): boolean {
-    return this._status === ObservableStatus.DISPOSED
-  }
-
-  public dispose(): void {
-    if (this._status !== ObservableStatus.DISPOSED) {
-      this._status = ObservableStatus.DISPOSED
+  public override dispose(): void {
+    if (!this.disposed) {
+      super.dispose()
 
       // Clear timer.
       if (this._nextCallerTimer !== undefined) {
-        clearTimeout(this._nextCallerTimer)
+        const callerTimer = this._nextCallerTimer
         const caller = this._nextCaller
+
         this._nextCallerTimer = undefined
         this._nextCaller = undefined
+
+        clearTimeout(callerTimer)
         if (caller) caller()
       }
 
@@ -56,28 +56,20 @@ export class Observable<T extends Readonly<IObservableValue>> implements IObserv
   }
 
   public subscribe(subscriber: ISubscriber<T>): IUnsubscribable {
-    switch (this._status) {
-      case ObservableStatus.AVAILABLE: {
-        if (!this._subscribers.includes(subscriber)) {
-          this._subscribers = [...this._subscribers, subscriber]
-        }
+    if (this.disposed) {
+      subscriber.complete()
+      return {
+        unsubscribe: () => {},
+      }
+    }
 
-        return {
-          unsubscribe: () => {
-            this._subscribers = this._subscribers.filter(s => s !== subscriber)
-          },
-        }
-      }
-      case ObservableStatus.DISPOSED: {
-        subscriber.complete()
-        return {
-          unsubscribe: () => {},
-        }
-      }
-      /* c8 ignore start */
-      default:
-        throw new Error(`[Observable] Unexpected Status: ${this._status}.`)
-      /* c8 ignore end */
+    if (!this._subscribers.includes(subscriber)) {
+      this._subscribers = [...this._subscribers, subscriber]
+    }
+    return {
+      unsubscribe: () => {
+        this._subscribers = this._subscribers.filter(s => s !== subscriber)
+      },
     }
   }
 
@@ -98,26 +90,26 @@ export class Observable<T extends Readonly<IObservableValue>> implements IObserv
 
     // Clear timer
     if (this._nextCallerTimer !== undefined) {
-      clearTimeout(this._nextCallerTimer)
+      const callerTimer = this._nextCallerTimer
+
       this._nextCallerTimer = undefined
       this._nextCaller = undefined
+
+      clearTimeout(callerTimer)
     }
 
     const caller = (): void => {
       const subscribers: ReadonlyArray<ISubscriber<T>> = this._subscribers
       for (const subscriber of subscribers) subscriber.next(value, prevValue)
     }
-    const callerTimer = setTimeout(
-      () => {
-        if (this._nextCallerTimer === callerTimer) {
-          this._nextCallerTimer = undefined
-          this._nextCaller = undefined
-          caller()
-        }
-      },
 
-      this.delay,
-    )
+    const callerTimer = setTimeout(() => {
+      if (this._nextCallerTimer === callerTimer) {
+        this._nextCallerTimer = undefined
+        this._nextCaller = undefined
+        caller()
+      }
+    }, this.delay)
 
     this._nextCaller = caller
     this._nextCallerTimer = callerTimer

@@ -1,4 +1,3 @@
-import { Disposable } from './disposable'
 import { Observable } from './observable'
 import type {
   IDisposable,
@@ -7,20 +6,20 @@ import type {
   IObservableValue,
   ITicker,
 } from './types'
+import { buildDisposable } from './util'
 
 export class Ticker extends Observable<number> implements ITicker {
-  protected readonly _observableMap: Map<IObservable<IObservableValue>, IDisposable>
+  protected readonly _observes: Set<IObservable<IObservableValue>>
 
   constructor(start?: number, options?: IObservableOptions<number>) {
     super(start ?? 0, options)
-    this._observableMap = new Map()
+    this._observes = new Set<IObservable<IObservableValue>>()
   }
 
   public override dispose(): void {
     if (!this.disposed) {
       super.dispose()
-      for (const disposable of this._observableMap.values()) disposable.dispose()
-      this._observableMap.clear()
+      this._observes.clear()
     }
   }
 
@@ -34,15 +33,16 @@ export class Ticker extends Observable<number> implements ITicker {
       return
     }
 
-    if (!this._observableMap.has(observable)) {
+    if (!this._observes.has(observable)) {
       const unsubscribable = observable.subscribe({
         next: (): void => {
           if (!disposable.disposed) this.tick()
         },
         complete: (): void => disposable.dispose(),
       })
-      const disposable = new Disposable(() => unsubscribable.unsubscribe())
-      this._observableMap.set(observable, disposable)
+      const disposable: IDisposable = buildDisposable(() => unsubscribable.unsubscribe())
+      this._observes.add(observable)
+      this.registerDisposable(disposable)
     }
   }
 }

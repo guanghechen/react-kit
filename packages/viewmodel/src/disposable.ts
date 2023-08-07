@@ -1,12 +1,13 @@
 import type { IDisposable } from './types'
+import { disposeAll } from './util'
 
 export class Disposable implements IDisposable {
   protected _disposed: boolean
-  protected readonly _onDispose: () => void
+  protected readonly _disposables: IDisposable[]
 
-  constructor(onDispose: () => void) {
+  constructor() {
     this._disposed = false
-    this._onDispose = onDispose
+    this._disposables = []
   }
 
   public get disposed(): boolean {
@@ -16,7 +17,13 @@ export class Disposable implements IDisposable {
   public dispose(): void {
     if (!this._disposed) {
       this._disposed = true
-      this._onDispose()
+      disposeAll(this._disposables)
+      this._disposables.length = 0
     }
+  }
+
+  public registerDisposable<T extends IDisposable>(disposable: T): void {
+    if (this._disposed) disposable.dispose()
+    else this._disposables.push(disposable)
   }
 }
