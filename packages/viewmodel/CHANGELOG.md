@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.2](https://github.com/guanghechen/react-kit/compare/@guanghechen/viewmodel@0.1.1...@guanghechen/viewmodel@0.1.2) (2023-08-16)
+
+
+### Performance Improvements
+
+* :art:  refactor disposable ([9cc28d6](https://github.com/guanghechen/react-kit/commit/9cc28d64beb16d0f96833b9f14f315f8cbb4f2f2))
+* ⬆️ upgrade dependencies ([e443448](https://github.com/guanghechen/react-kit/commit/e4434481d1834f7567944788042ac478eb5fd503))
+
+
+
+
+
 ## [0.1.1](https://github.com/guanghechen/react-kit/compare/@guanghechen/viewmodel@0.1.0...@guanghechen/viewmodel@0.1.1) (2023-08-07)
 
 

@@ -1,6 +1,6 @@
 <header>
   <h1 align="center">
-    <a href="https://github.com/guanghechen/react-kit/tree/@guanghechen/fast-deep-equal@2.3.4/packages/fast-deep-equal#readme">@guanghechen/fast-deep-equal</a>
+    <a href="https://github.com/guanghechen/react-kit/tree/@guanghechen/fast-deep-equal@2.3.5/packages/fast-deep-equal#readme">@guanghechen/fast-deep-equal</a>
   </h1>
   <div align="center">
     <a href="https://www.npmjs.com/package/@guanghechen/fast-deep-equal">
