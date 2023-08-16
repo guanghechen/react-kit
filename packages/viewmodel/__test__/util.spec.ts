@@ -1,4 +1,4 @@
-import { Disposable, Observable, buildDisposable, isDisposable, isObservable } from '../src'
+import { BatchDisposable, Disposable, Observable, isDisposable, isObservable } from '../src'
 
 test('isDisposable', () => {
   expect(isDisposable(null)).toEqual(false)
@@ -8,8 +8,9 @@ test('isDisposable', () => {
   expect(isDisposable({ disposed: false })).toEqual(false)
   expect(isDisposable({ dispose: () => {}, disposed: false })).toEqual(true)
   expect(isDisposable({ dispose: () => {}, disposed: true })).toEqual(true)
-  expect(isDisposable(buildDisposable(() => {}))).toEqual(true)
-  expect(isDisposable(new Disposable())).toEqual(true)
+  expect(isDisposable(Disposable.fromCallback(() => {}))).toEqual(true)
+  expect(isDisposable(Disposable.fromUnsubscribable({ unsubscribe: () => {} }))).toEqual(true)
+  expect(isDisposable(new BatchDisposable())).toEqual(true)
 })
 
 test('isObservable', () => {

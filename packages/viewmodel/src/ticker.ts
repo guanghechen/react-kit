@@ -1,3 +1,4 @@
+import { Disposable } from './disposable'
 import { Observable } from './observable'
 import type {
   IDisposable,
@@ -6,7 +7,6 @@ import type {
   IObservableValue,
   ITicker,
 } from './types'
-import { buildDisposable } from './util'
 
 export class Ticker extends Observable<number> implements ITicker {
   protected readonly _observes: Set<IObservable<IObservableValue>>
@@ -40,7 +40,7 @@ export class Ticker extends Observable<number> implements ITicker {
         },
         complete: (): void => disposable.dispose(),
       })
-      const disposable: IDisposable = buildDisposable(() => unsubscribable.unsubscribe())
+      const disposable: IDisposable = Disposable.fromUnsubscribable(unsubscribable)
       this._observes.add(observable)
       this.registerDisposable(disposable)
     }

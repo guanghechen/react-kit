@@ -1,15 +1,16 @@
-import type { IDisposable, IEquals, IObservableValue, ISubscribable } from './common'
+import type { IBatchDisposable, IEquals, IObservableValue, ISubscribable } from './common'
 
 export interface IObservableOptions<T extends IObservableValue> {
   equals?: IEquals<T>
   delay?: number
 }
 
-export interface IObservable<T extends IObservableValue> extends ISubscribable<T>, IDisposable {
+export interface IObservable<T extends IObservableValue>
+  extends ISubscribable<T>,
+    IBatchDisposable {
   readonly equals: IEquals<T>
   getSnapshot(): T
   next(value: T): void
-  registerDisposable<T extends IDisposable>(disposable: T): void
 }
 
 export type IValueList<T extends Array<IObservable<any>>> = {

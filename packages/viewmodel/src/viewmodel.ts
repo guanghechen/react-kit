@@ -1,9 +1,9 @@
-import { Disposable } from './disposable'
+import { BatchDisposable } from './disposable'
 import { Ticker } from './ticker'
 import type { IObservableKey, IViewModel, IViewModelTicker } from './types'
 import { isDisposable, isObservable } from './util'
 
-export abstract class ViewModel extends Disposable implements IViewModel {
+export abstract class ViewModel extends BatchDisposable implements IViewModel {
   protected readonly _tickerMap: Map<string, IViewModelTicker>
 
   constructor() {

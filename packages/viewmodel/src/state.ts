@@ -1,6 +1,6 @@
+import { Disposable } from './disposable'
 import { Observable } from './observable'
 import type { IDisposable, IStatableValue, IState, ISubscriber } from './types'
-import { buildDisposable } from './util'
 
 export class State<T extends Readonly<IStatableValue>> extends Observable<T> implements IState<T> {
   public override readonly getSnapshot = (): T => {
@@ -22,7 +22,7 @@ export class State<T extends Readonly<IStatableValue>> extends Observable<T> imp
       complete: () => {},
     }
     const unsubscribable = super.subscribe(subscriber)
-    const disposable: IDisposable = buildDisposable(() => unsubscribable.unsubscribe())
+    const disposable: IDisposable = Disposable.fromUnsubscribable(unsubscribable)
     this.registerDisposable(disposable)
     return () => disposable.dispose()
   }

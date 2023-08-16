@@ -1,4 +1,4 @@
-import { Disposable } from './disposable'
+import { BatchDisposable } from './disposable'
 import type {
   IEquals,
   IObservable,
@@ -9,7 +9,7 @@ import type {
 } from './types'
 
 export class Observable<T extends Readonly<IObservableValue>>
-  extends Disposable
+  extends BatchDisposable
   implements IObservable<T>
 {
   public readonly delay: number

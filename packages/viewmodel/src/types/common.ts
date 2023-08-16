@@ -14,6 +14,10 @@ export interface IDisposable {
   dispose(): void
 }
 
+export interface IBatchDisposable extends IDisposable {
+  registerDisposable<T extends IDisposable>(disposable: T): void
+}
+
 export interface ISubscriber<T> {
   next(value: T, prevValue: T | undefined): void
   complete(): void

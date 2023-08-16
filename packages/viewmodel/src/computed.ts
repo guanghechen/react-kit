@@ -1,3 +1,4 @@
+import { Disposable } from './disposable'
 import { Observable } from './observable'
 import { Ticker } from './ticker'
 import type {
@@ -9,7 +10,6 @@ import type {
   ISubscriber,
   IValueList,
 } from './types'
-import { buildDisposable } from './util'
 
 export class Computed<T extends Readonly<IComputableValue>> implements IComputed<T> {
   protected readonly _observable: IObservable<T>
@@ -67,7 +67,7 @@ export class Computed<T extends Readonly<IComputableValue>> implements IComputed
       complete: () => {},
     }
     const unsubscribable = this._observable.subscribe(subscriber)
-    const disposable: IDisposable = buildDisposable(() => unsubscribable.unsubscribe())
+    const disposable: IDisposable = Disposable.fromUnsubscribable(unsubscribable)
     this._observable.registerDisposable(disposable)
     return () => disposable.dispose()
   }
