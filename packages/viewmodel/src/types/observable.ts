@@ -6,8 +6,8 @@ export interface IObservableOptions<T extends IObservableValue> {
 }
 
 export interface IObservable<T extends IObservableValue>
-  extends ISubscribable<T>,
-    IBatchDisposable {
+  extends IBatchDisposable,
+    ISubscribable<T> {
   readonly equals: IEquals<T>
   getSnapshot(): T
   next(value: T): void

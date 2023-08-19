@@ -1,4 +1,4 @@
-import type { IDisposable, ISubscribable } from './common'
+import type { IBatchDisposable, IDisposable, ISubscribable } from './common'
 import type { IObservableKey } from './observable'
 
 export interface IViewModelTicker {
@@ -6,7 +6,7 @@ export interface IViewModelTicker {
   readonly ticker: ISubscribable<number> & IDisposable
 }
 
-export interface IViewModel extends IDisposable {
+export interface IViewModel extends IBatchDisposable {
   /**
    * Create a tick observable to watch changes in keys of this.
    * @param keys
