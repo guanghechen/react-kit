@@ -1,6 +1,6 @@
 {
   "name": "@guanghechen/react-viewmodel",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "React viewmodel.",
   "author": {
     "name": "guanghechen",
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-viewmodel@0.1.5",
+    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-viewmodel@0.1.6",
     "directory": "packages/react-viewmodel"
   },
-  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-viewmodel@0.1.5/packages/react-viewmodel#readme",
+  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/react-viewmodel@0.1.6/packages/react-viewmodel#readme",
   "keywords": [
     "viewmodel",
     "react"
@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@guanghechen/fast-deep-equal": "^2.3.5",
-    "@guanghechen/viewmodel": "^0.1.2"
+    "@guanghechen/viewmodel": "^0.1.3"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0"

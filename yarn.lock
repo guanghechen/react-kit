@@ -732,7 +732,7 @@ __metadata:
   resolution: "@guanghechen/react-viewmodel@workspace:packages/react-viewmodel"
   dependencies:
     "@guanghechen/fast-deep-equal": ^2.3.5
-    "@guanghechen/viewmodel": ^0.1.2
+    "@guanghechen/viewmodel": ^0.1.3
     cross-env: ^7.0.3
     rimraf: ^5.0.1
     rollup: ^3.28.0
@@ -784,7 +784,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@guanghechen/viewmodel@^0.1.2, @guanghechen/viewmodel@workspace:packages/viewmodel":
+"@guanghechen/viewmodel@^0.1.3, @guanghechen/viewmodel@workspace:packages/viewmodel":
   version: 0.0.0-use.local
   resolution: "@guanghechen/viewmodel@workspace:packages/viewmodel"
   dependencies:
