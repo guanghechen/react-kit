@@ -74,6 +74,7 @@ export class Observable<T extends Readonly<IObservableValue>>
     if (this.equals(value, prevValue)) return
 
     this._value = value
+    this.notify(value, prevValue, transaction)
   }
 
   protected notify(value: T, prevValue: T, transaction: IScheduleTransaction | undefined): void {
@@ -113,7 +114,7 @@ export class DisposedObservable<T extends Readonly<IObservableValue>> implements
     return this._value
   }
 
-  public next(value: T): void {
+  public next(value: T, _transaction?: IScheduleTransaction): void {
     // Already disposed.
     console.warn(`[DisposedObservable] Don't update a disposed observable. value:`, value)
   }
