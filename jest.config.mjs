@@ -1,6 +1,9 @@
 import { tsMonorepoConfig } from '@guanghechen/jest-config'
 import path from 'node:path'
 import url from 'node:url'
+import { createRequire } from 'node:module'
+
+const require = createRequire(import.meta.url)
 
 export default async function () {
   const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
@@ -22,6 +25,7 @@ export default async function () {
       },
     },
     extensionsToTreatAsEsm: ['.ts', '.mts', '.tsx', '.mtsx'],
+    prettierPath: require.resolve('prettier-2')
   }
   return config
 }

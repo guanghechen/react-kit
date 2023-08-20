@@ -16,6 +16,7 @@ export class Schedulable implements ISchedulable {
 
   public schedule(): void {
     if (this._scheduled) return
+    this._scheduled = true
     this._run()
   }
 }
@@ -51,11 +52,13 @@ export class SchedulableTransaction implements IScheduleTransaction {
         console.warn('[Transaction] transaction must not be nested.')
         break
       case ScheduleTransactionStatus.NOT_STARTED:
-      case ScheduleTransactionStatus.FINISHED:
+      case ScheduleTransactionStatus.COMPLETED:
         this._status = ScheduleTransactionStatus.STARTED
         this._schedulables = []
         break
+      /* c8 ignore start */
       default:
+      /* c8 ignore end */
     }
   }
 
@@ -67,7 +70,7 @@ export class SchedulableTransaction implements IScheduleTransaction {
 
     const schedulables = this._schedulables.slice()
     this._schedulables = []
-    this._status = ScheduleTransactionStatus.FINISHED
+    this._status = ScheduleTransactionStatus.COMPLETED
     schedulables.forEach(schedulable => schedulable.scheduled || schedulable.schedule())
   }
 }

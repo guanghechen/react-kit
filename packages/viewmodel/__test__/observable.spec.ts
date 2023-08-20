@@ -13,7 +13,7 @@ describe('Observable', () => {
   })
 
   test('do not unsubscribe', async () => {
-    const observable = new Observable<number>(1, { delay: 1 })
+    const observable = new Observable<number>(1)
 
     const subscriber0 = new Subscriber('subscriber0', 0)
     expect(subscriber0.value).toEqual(0)
@@ -79,7 +79,7 @@ describe('Observable', () => {
   })
 
   test('unsubscribe', async () => {
-    const observable = new Observable<number>(1, { delay: 1 })
+    const observable = new Observable<number>(1)
 
     const subscriber = new Subscriber('subscriber', 0)
     expect(subscriber.value).toEqual(0)
@@ -112,7 +112,7 @@ describe('Observable', () => {
   })
 
   test('debounce', async () => {
-    const observable = new Observable<number>(1, { delay: 1 })
+    const observable = new Observable<number>(1)
 
     const subscriber = new Subscriber('subscriber', 0)
     expect(subscriber.value).toEqual(0)

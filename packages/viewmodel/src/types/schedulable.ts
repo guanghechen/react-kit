@@ -1,7 +1,7 @@
 export enum ScheduleTransactionStatus {
   NOT_STARTED = 0,
   STARTED = 1,
-  FINISHED = 2,
+  COMPLETED = 2,
 }
 
 export interface ISchedulable {
