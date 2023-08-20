@@ -1,10 +1,12 @@
 import { BatchDisposable } from './disposable'
+import { Schedulable } from './schedulable'
 import type {
   IDisposable,
   IEquals,
   IObservable,
   IObservableOptions,
   IObservableValue,
+  IScheduleTransaction,
   ISubscriber,
   IUnsubscribable,
 } from './types'
@@ -14,40 +16,20 @@ export class Observable<T extends Readonly<IObservableValue>>
   extends BatchDisposable
   implements IObservable<T>
 {
-  public readonly delay: number
   public readonly equals: IEquals<T>
   protected _value: T
   protected _subscribers: ReadonlyArray<ISubscriber<T>>
-  protected _scheduledNotifierTimer: ReturnType<typeof setTimeout> | undefined
-  protected _scheduledNotifier: (() => void) | undefined
 
   constructor(defaultValue: T, options: IObservableOptions<T> = {}) {
     super()
     this._value = defaultValue
     this._subscribers = []
-    this._scheduledNotifierTimer = undefined
-    this._scheduledNotifier = undefined
-
-    const delay: number = Number(options.delay || 0) || 0
-    this.delay = delay >= 0 ? delay : -1
     this.equals = options.equals ?? ((x: T, y: T) => Object.is(x, y))
   }
 
   public override dispose(): void {
     if (!this.disposed) {
       super.dispose()
-
-      // Clear timer.
-      if (this._scheduledNotifierTimer !== undefined) {
-        const scheduledNotifierTimer = this._scheduledNotifierTimer
-        const scheduledNotifier = this._scheduledNotifier
-
-        this._scheduledNotifierTimer = undefined
-        this._scheduledNotifier = undefined
-
-        clearTimeout(scheduledNotifierTimer)
-        if (scheduledNotifier) scheduledNotifier()
-      }
 
       // Reset subscribers and avoid unexpected modification on iterator.
       const subscribers: ReadonlyArray<ISubscriber<T>> = this._subscribers
@@ -82,7 +64,7 @@ export class Observable<T extends Readonly<IObservableValue>>
    * 1. Update observable state.
    * 2. Notify all subscribers if the value is changed.
    */
-  public next(value: T): void {
+  public next(value: T, transaction?: IScheduleTransaction): void {
     if (this.disposed) {
       console.warn(`[Observable] Don't update a disposed observable. value:`, value)
       return
@@ -92,36 +74,14 @@ export class Observable<T extends Readonly<IObservableValue>>
     if (this.equals(value, prevValue)) return
 
     this._value = value
-    this.notify(value, prevValue)
   }
 
-  protected notify(value: T, prevValue: T): void {
-    if (this.delay < 0) {
+  protected notify(value: T, prevValue: T, transaction: IScheduleTransaction | undefined): void {
+    if (transaction) {
+      transaction.step(new Schedulable(() => this.notifyImmediate(value, prevValue)))
+    } else {
       this.notifyImmediate(value, prevValue)
-      return
     }
-
-    // Clear timer
-    if (this._scheduledNotifierTimer !== undefined) {
-      const scheduledNotifierTimer = this._scheduledNotifierTimer
-
-      this._scheduledNotifierTimer = undefined
-      this._scheduledNotifier = undefined
-
-      clearTimeout(scheduledNotifierTimer)
-    }
-
-    const scheduledNotifier = (): void => this.notifyImmediate(value, prevValue)
-    const scheduledNotifierTimer = setTimeout(() => {
-      if (this._scheduledNotifierTimer === scheduledNotifierTimer) {
-        this._scheduledNotifierTimer = undefined
-        this._scheduledNotifier = undefined
-        scheduledNotifier()
-      }
-    }, this.delay)
-
-    this._scheduledNotifier = scheduledNotifier
-    this._scheduledNotifierTimer = scheduledNotifierTimer
   }
 
   protected notifyImmediate(value: T, prevValue: T): void {

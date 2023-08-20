@@ -1,5 +1,6 @@
 import { BatchDisposable, Disposable } from './disposable'
 import { DisposedObservable, Observable } from './observable'
+import { Schedulable } from './schedulable'
 import type {
   IEquals,
   IImmutableCollection,
@@ -8,6 +9,7 @@ import type {
   IObservableCollectionOptions,
   IObservableKeyChange,
   IObservableValue,
+  IScheduleTransaction,
   ISubscriber,
   IUnsubscribable,
 } from './types'
@@ -21,13 +23,10 @@ export class ObservableCollection<
   extends BatchDisposable
   implements IObservableCollection<K, V, C>
 {
-  public readonly delay: number
   public readonly equals: IEquals<C>
   public readonly valueEquals: IEquals<V | undefined>
   protected readonly _keySubscribersMap: Map<K, ReadonlyArray<ISubscriber<V | undefined>>>
   protected _subscribers: ReadonlyArray<ISubscriber<C>>
-  protected _scheduledNotifierTimer: ReturnType<typeof setTimeout> | undefined
-  protected _scheduledNotifier: (() => void) | undefined
   protected _value: C
 
   constructor(defaultValue: C, options: IObservableCollectionOptions<V> = {}) {
@@ -35,11 +34,6 @@ export class ObservableCollection<
     this._value = defaultValue
     this._subscribers = []
     this._keySubscribersMap = new Map()
-    this._scheduledNotifierTimer = undefined
-    this._scheduledNotifier = undefined
-
-    const delay: number = Number(options.delay || 0) || 0
-    this.delay = delay >= 0 ? delay : -1
     this.valueEquals =
       options.valueEquals ?? ((x: V | undefined, y: V | undefined) => Object.is(x, y))
     this.equals = (x: C, y: C) => Object.is(x, y)
@@ -48,18 +42,6 @@ export class ObservableCollection<
   public override dispose(): void {
     if (!this.disposed) {
       super.dispose()
-
-      // Clear timer.
-      if (this._scheduledNotifierTimer !== undefined) {
-        const scheduledNotifierTimer = this._scheduledNotifierTimer
-        const scheduledNotifier = this._scheduledNotifier
-
-        this._scheduledNotifierTimer = undefined
-        this._scheduledNotifier = undefined
-
-        clearTimeout(scheduledNotifierTimer)
-        if (scheduledNotifier) scheduledNotifier()
-      }
 
       // Reset subscribers and avoid unexpected modification on iterator.
       const subscribers: ReadonlyArray<ISubscriber<C>> = this._subscribers
@@ -95,7 +77,7 @@ export class ObservableCollection<
     return this._value.entries()
   }
 
-  public set(key: K, value: V): void {
+  public set(key: K, value: V, transaction?: IScheduleTransaction): void {
     const prevKeyValue: V | undefined = this._value.get(key)
     const nextKeyValue = value
     if (this.valueEquals(nextKeyValue, prevKeyValue)) return
@@ -105,10 +87,10 @@ export class ObservableCollection<
     const prevValue: C = this._value
     const nextValue: C = this._value.set(key, nextKeyValue)
     this._value = nextValue
-    this.notify(nextValue, prevValue, changes)
+    this.notify(nextValue, prevValue, changes, transaction)
   }
 
-  public delete(key: K): void {
+  public delete(key: K, transaction?: IScheduleTransaction): void {
     if (!this._value.has(key)) return
 
     const prevKeyValue: V | undefined = this._value.get(key)
@@ -119,10 +101,10 @@ export class ObservableCollection<
     const prevValue: C = this._value
     const nextValue: C = this._value.delete(key)
     this._value = nextValue
-    this.notify(nextValue, prevValue, changes)
+    this.notify(nextValue, prevValue, changes, transaction)
   }
 
-  public deleteAll(keys: Iterable<K>): void {
+  public deleteAll(keys: Iterable<K>, transaction?: IScheduleTransaction): void {
     const changes: Array<IObservableKeyChange<K, V>> = []
     for (const key of keys) {
       if (this._value.has(key)) {
@@ -136,10 +118,10 @@ export class ObservableCollection<
     const prevValue: C = this._value
     const nextValue: C = this._value.deleteAll(changes.map(c => c.key))
     this._value = nextValue
-    this.notify(nextValue, prevValue, changes)
+    this.notify(nextValue, prevValue, changes, transaction)
   }
 
-  public merge(entries: Iterable<[K, V]>): void {
+  public merge(entries: Iterable<[K, V]>, transaction?: IScheduleTransaction): void {
     const changes: Array<IObservableKeyChange<K, V>> = []
     for (const [key, nextKeyValue] of entries) {
       const prevKeyValue: V | undefined = this._value.get(key)
@@ -153,7 +135,7 @@ export class ObservableCollection<
     const prevValue: C = this._value
     const nextValue: C = this._value.merge(changes.map(c => [c.key, c.value!]))
     this._value = nextValue
-    this.notify(nextValue, prevValue, changes)
+    this.notify(nextValue, prevValue, changes, transaction)
   }
 
   public getSnapshot(): C {
@@ -178,7 +160,7 @@ export class ObservableCollection<
     }
   }
 
-  public next(value: C): void {
+  public next(value: C, transaction?: IScheduleTransaction): void {
     const changes: Array<IObservableKeyChange<K, V>> = []
     const prevValue: C = this._value
 
@@ -201,17 +183,14 @@ export class ObservableCollection<
 
     const nextValue: C = value
     this._value = nextValue
-    this.notify(nextValue, prevValue, changes)
+    this.notify(nextValue, prevValue, changes, transaction)
   }
 
   public observeKey(key: K): IObservable<V | undefined> {
     const value: V | undefined = this._value.get(key)
     if (this.disposed) return new DisposedObservable<V | undefined>(value, this.valueEquals)
 
-    const observable: IObservable<V | undefined> = new Observable<V | undefined>(value, {
-      delay: 0,
-      equals: this.valueEquals,
-    })
+    const observable = new Observable<V | undefined>(value, { equals: this.valueEquals })
     const unsubscribable: IUnsubscribable = this.subscribeKey(key, {
       next: v => observable.next(v),
       complete: () => observable.dispose(),
@@ -252,33 +231,13 @@ export class ObservableCollection<
     value: C,
     prevValue: C,
     changes: ReadonlyArray<IObservableKeyChange<K, V>>,
+    transaction: IScheduleTransaction | undefined,
   ): void {
-    if (this.delay < 0) {
+    if (transaction) {
+      transaction.step(new Schedulable(() => this.notifyImmediate(value, prevValue, changes)))
+    } else {
       this.notifyImmediate(value, prevValue, changes)
-      return
     }
-
-    // Clear timer
-    if (this._scheduledNotifierTimer !== undefined) {
-      const scheduledNotifierTimer = this._scheduledNotifierTimer
-
-      this._scheduledNotifierTimer = undefined
-      this._scheduledNotifier = undefined
-
-      clearTimeout(scheduledNotifierTimer)
-    }
-
-    const scheduledNotifier = (): void => this.notifyImmediate(value, prevValue, changes)
-    const scheduledNotifierTimer = setTimeout(() => {
-      if (this._scheduledNotifierTimer === scheduledNotifierTimer) {
-        this._scheduledNotifierTimer = undefined
-        this._scheduledNotifier = undefined
-        scheduledNotifier()
-      }
-    }, this.delay)
-
-    this._scheduledNotifier = scheduledNotifier
-    this._scheduledNotifierTimer = scheduledNotifierTimer
   }
 
   protected notifyImmediate(
