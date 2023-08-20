@@ -1,8 +1,8 @@
 import type { IBatchDisposable, IEquals, IObservableValue, ISubscribable } from './common'
 
 export interface IObservableOptions<T extends IObservableValue> {
-  equals?: IEquals<T>
   delay?: number
+  equals?: IEquals<T>
 }
 
 export interface IObservable<T extends IObservableValue>
