@@ -32,3 +32,11 @@ export interface ISubscribable<T> {
 }
 
 export type IEquals<T> = (x: T, y: T) => boolean
+
+export type ITimer = ReturnType<typeof setTimeout>
+
+export interface IAsyncCaller {
+  timer: ITimer
+  createdAt: number
+  call: () => void
+}

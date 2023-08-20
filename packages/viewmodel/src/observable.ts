@@ -80,9 +80,10 @@ export class Observable<T extends Readonly<IObservableValue>>
   protected notify(value: T, prevValue: T, transaction: IScheduleTransaction | undefined): void {
     if (transaction) {
       transaction.step(new Schedulable(() => this.notifyImmediate(value, prevValue)))
-    } else {
-      this.notifyImmediate(value, prevValue)
+      return
     }
+
+    this.notifyImmediate(value, prevValue)
   }
 
   protected notifyImmediate(value: T, prevValue: T): void {

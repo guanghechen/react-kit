@@ -235,9 +235,9 @@ export class ObservableCollection<
   ): void {
     if (transaction) {
       transaction.step(new Schedulable(() => this.notifyImmediate(value, prevValue, changes)))
-    } else {
-      this.notifyImmediate(value, prevValue, changes)
     }
+
+    this.notifyImmediate(value, prevValue, changes)
   }
 
   protected notifyImmediate(
