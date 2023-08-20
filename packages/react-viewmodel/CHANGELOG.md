@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-viewmodel@0.1.6...@guanghechen/react-viewmodel@0.2.0) (2023-08-20)
+
+
+### Features
+
+* ✨ export new method useObserveKey ([a5dce69](https://github.com/guanghechen/react-kit/commit/a5dce6931dfb69f876253d1998b02d7cedca135c))
+
+
+
+
+
 ## [0.1.6](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-viewmodel@0.1.5...@guanghechen/react-viewmodel@0.1.6) (2023-08-19)
 
 **Note:** Version bump only for package @guanghechen/react-viewmodel

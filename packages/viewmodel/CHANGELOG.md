@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/guanghechen/react-kit/compare/@guanghechen/viewmodel@0.1.3...@guanghechen/viewmodel@0.2.0) (2023-08-20)
+
+
+### Features
+
+* ✨ add schedulable ([fe98ef5](https://github.com/guanghechen/react-kit/commit/fe98ef5f14abe14ab9bc78366ce9848bcea744b7))
+* ✨ support ObservableCollection ([32ac134](https://github.com/guanghechen/react-kit/commit/32ac134058c322019a73b6437555903caa950be8))
+
+
+### Performance Improvements
+
+* ⚡️ support to run changes in transaction to avoid unncessary notify ([1453caf](https://github.com/guanghechen/react-kit/commit/1453cafa705913505b91e7b1141d1612543a166c))
+* ✅ update tests ([76009d9](https://github.com/guanghechen/react-kit/commit/76009d9c8f31f1b2d088d716c83acee5454afd36))
+* ✅ update tests for observable ([83c75e1](https://github.com/guanghechen/react-kit/commit/83c75e1c780019dc178ac2e86bd0062cd9186a89))
+* ✅ update tests for observable-collection ([284195d](https://github.com/guanghechen/react-kit/commit/284195da86ba8bc06f8ff6456575307a7588249d))
+* ✅ update tests for schedulable ([9173279](https://github.com/guanghechen/react-kit/commit/91732791883c22c58a4097be99e7924feeabe51a))
+
+
+
+
+
 ## [0.1.3](https://github.com/guanghechen/react-kit/compare/@guanghechen/viewmodel@0.1.2...@guanghechen/viewmodel@0.1.3) (2023-08-19)
 
 
