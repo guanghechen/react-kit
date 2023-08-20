@@ -1,5 +1,6 @@
 export * from '@guanghechen/viewmodel'
 export * from './useComputed'
+export * from './useObserveKey'
 export * from './useObserveSignal'
 export * from './useSelect'
 export * from './useState'
