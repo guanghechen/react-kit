@@ -13,5 +13,6 @@ export interface IScheduleTransaction {
   status: ScheduleTransactionStatus
   step(task: ISchedulable): void
   start(): void
+  flush(): void // execute current steps immediately.
   end(): void
 }

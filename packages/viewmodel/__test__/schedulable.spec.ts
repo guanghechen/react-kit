@@ -48,7 +48,8 @@ describe('Schedulable', () => {
     expect(consoleMock.getIndiscriminateAll()).toMatchInlineSnapshot(`
       [
         [
-          "[Transaction] Failed to end cause the transaction is not started yet.",
+          "[Transaction.end] bad status:",
+          0,
         ],
       ]
     `)
@@ -59,23 +60,12 @@ describe('Schedulable', () => {
     expect(consoleMock.getIndiscriminateAll()).toMatchInlineSnapshot(`
       [
         [
-          "[Transaction] Failed to end cause the transaction is not started yet.",
+          "[Transaction.end] bad status:",
+          0,
         ],
         [
-          "[Transaction] Failed to add task cause the transaction is not started yet.",
-        ],
-      ]
-    `)
-
-    transaction.start()
-    expect(transaction.status).toEqual(ScheduleTransactionStatus.STARTED)
-    expect(consoleMock.getIndiscriminateAll()).toMatchInlineSnapshot(`
-      [
-        [
-          "[Transaction] Failed to end cause the transaction is not started yet.",
-        ],
-        [
-          "[Transaction] Failed to add task cause the transaction is not started yet.",
+          "[Transaction.step] bad status:",
+          0,
         ],
       ]
     `)
@@ -85,13 +75,31 @@ describe('Schedulable', () => {
     expect(consoleMock.getIndiscriminateAll()).toMatchInlineSnapshot(`
       [
         [
-          "[Transaction] Failed to end cause the transaction is not started yet.",
+          "[Transaction.end] bad status:",
+          0,
         ],
         [
-          "[Transaction] Failed to add task cause the transaction is not started yet.",
+          "[Transaction.step] bad status:",
+          0,
+        ],
+      ]
+    `)
+
+    transaction.start()
+    expect(transaction.status).toEqual(ScheduleTransactionStatus.STARTED)
+    expect(consoleMock.getIndiscriminateAll()).toMatchInlineSnapshot(`
+      [
+        [
+          "[Transaction.end] bad status:",
+          0,
         ],
         [
-          "[Transaction] transaction must not be nested.",
+          "[Transaction.step] bad status:",
+          0,
+        ],
+        [
+          "[Transaction.start] bad status:",
+          1,
         ],
       ]
     `)
@@ -110,13 +118,16 @@ describe('Schedulable', () => {
     expect(consoleMock.getIndiscriminateAll()).toMatchInlineSnapshot(`
       [
         [
-          "[Transaction] Failed to end cause the transaction is not started yet.",
+          "[Transaction.end] bad status:",
+          0,
         ],
         [
-          "[Transaction] Failed to add task cause the transaction is not started yet.",
+          "[Transaction.step] bad status:",
+          0,
         ],
         [
-          "[Transaction] transaction must not be nested.",
+          "[Transaction.start] bad status:",
+          1,
         ],
       ]
     `)

@@ -23,11 +23,13 @@ export class Schedulable implements ISchedulable {
 
 export class SchedulableTransaction implements IScheduleTransaction {
   protected _status: ScheduleTransactionStatus
-  protected _schedulables: ISchedulable[]
+  protected readonly _schedulables: ISchedulable[]
+  protected _scheduledIndex: number
 
   constructor() {
     this._status = ScheduleTransactionStatus.NOT_STARTED
     this._schedulables = []
+    this._scheduledIndex = 0
   }
 
   public get status(): ScheduleTransactionStatus {
@@ -36,8 +38,9 @@ export class SchedulableTransaction implements IScheduleTransaction {
 
   public step(task: ISchedulable): void {
     if (task.scheduled) return
+
     if (this._status !== ScheduleTransactionStatus.STARTED) {
-      console.warn('[Transaction] Failed to add task cause the transaction is not started yet.')
+      console.warn('[Transaction.step] bad status:', this._status)
       task.schedule()
       return
     }
@@ -47,30 +50,41 @@ export class SchedulableTransaction implements IScheduleTransaction {
   }
 
   public start(): void {
-    switch (this._status) {
-      case ScheduleTransactionStatus.STARTED:
-        console.warn('[Transaction] transaction must not be nested.')
-        break
-      case ScheduleTransactionStatus.NOT_STARTED:
-      case ScheduleTransactionStatus.COMPLETED:
-        this._status = ScheduleTransactionStatus.STARTED
-        this._schedulables = []
-        break
-      /* c8 ignore start */
-      default:
-      /* c8 ignore end */
+    if (this._status !== ScheduleTransactionStatus.NOT_STARTED) {
+      console.warn('[Transaction.start] bad status:', this._status)
+      return
     }
+    this._status = ScheduleTransactionStatus.STARTED
+  }
+
+  public flush(): void {
+    if (this._status !== ScheduleTransactionStatus.NOT_STARTED) {
+      console.warn('[Transaction.flush] bad status:', this._status)
+      return
+    }
+    this._flushWithoutCheck()
   }
 
   public end(): void {
     if (this._status !== ScheduleTransactionStatus.STARTED) {
-      console.warn('[Transaction] Failed to end cause the transaction is not started yet.')
+      console.warn('[Transaction.end] bad status:', this._status)
       return
     }
 
-    const schedulables = this._schedulables.slice()
-    this._schedulables = []
     this._status = ScheduleTransactionStatus.COMPLETED
-    schedulables.forEach(schedulable => schedulable.scheduled || schedulable.schedule())
+    this._flushWithoutCheck()
+    this._schedulables.length = 0
+    this._scheduledIndex = 0
+  }
+
+  protected _flushWithoutCheck(): void {
+    const start: number = this._scheduledIndex
+    const end: number = this._schedulables.length
+    this._scheduledIndex = end
+    for (let i = start; i < end; ++i) {
+      const schedulable = this._schedulables[i]
+      if (schedulable.scheduled) continue
+      schedulable.schedule()
+    }
   }
 }
