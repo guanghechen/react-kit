@@ -7,6 +7,8 @@
     "Parens",
     "pinst",
     "postpublish",
+    "schedulable",
+    "schedulables",
     "unsubscribable",
     "unsubscribables",
     "viewmodel"
