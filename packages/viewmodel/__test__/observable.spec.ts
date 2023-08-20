@@ -1,7 +1,7 @@
 import type { IConsoleMock } from '@guanghechen/helper-jest'
 import { createConsoleMock } from '@guanghechen/helper-jest'
 import { DisposedObservable, Observable } from '../src'
-import { Subscriber } from './_common'
+import { Subscriber, delay } from './_common'
 
 describe('Observable', () => {
   let consoleMock: IConsoleMock
@@ -278,7 +278,3 @@ describe('DisposedObservable', () => {
     `)
   })
 })
-
-function delay(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}

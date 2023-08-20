@@ -30,7 +30,7 @@ export class ObservableCollection<
   protected _scheduledNotifier: (() => void) | undefined
   protected _value: C
 
-  constructor(defaultValue: C, options: IObservableCollectionOptions<V>) {
+  constructor(defaultValue: C, options: IObservableCollectionOptions<V> = {}) {
     super()
     this._value = defaultValue
     this._subscribers = []
