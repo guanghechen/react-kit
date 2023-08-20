@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/guanghechen/react-kit/compare/@guanghechen/viewmodel@0.2.0...@guanghechen/viewmodel@0.3.0) (2023-08-20)
+
+
+### Features
+
+* ✨ export new method startTransaction ([9bf4954](https://github.com/guanghechen/react-kit/commit/9bf4954cd1f0e8ea757df5c6735e703e7a778dc9))
+
+
+### Performance Improvements
+
+* ⚡️ support to specify throttle for ticker ([11c20e5](https://github.com/guanghechen/react-kit/commit/11c20e51e3e9b94bece8139b0c67f5a0b7930813))
+
+
+
+
+
 # [0.2.0](https://github.com/guanghechen/react-kit/compare/@guanghechen/viewmodel@0.1.3...@guanghechen/viewmodel@0.2.0) (2023-08-20)
 
 
