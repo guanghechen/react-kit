@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/guanghechen/react-kit/compare/@guanghechen/viewmodel@0.3.0...@guanghechen/viewmodel@0.4.0) (2023-08-30)
+
+
+### Features
+
+* ✨ support ObservableMap and ObservableSet ([d5c160e](https://github.com/guanghechen/react-kit/commit/d5c160e294e6c6c215a13de53f0dad82d31c79ef))
+
+
+### Performance Improvements
+
+* ✅ update tests ([5312e8e](https://github.com/guanghechen/react-kit/commit/5312e8e21654e809cd0172ae1de212f99593a08d))
+* ⬆️ upgrade dependencies ([95a3132](https://github.com/guanghechen/react-kit/commit/95a31328273c4763ffb3d7a275496bc81512f49b))
+
+
+
+
+
 # [0.3.0](https://github.com/guanghechen/react-kit/compare/@guanghechen/viewmodel@0.2.0...@guanghechen/viewmodel@0.3.0) (2023-08-20)
 
 

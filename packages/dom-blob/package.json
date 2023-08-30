@@ -1,6 +1,6 @@
 {
   "name": "@guanghechen/dom-blob",
-  "version": "2.3.5",
+  "version": "2.3.6",
   "description": "Utilities for processing blob objects (i.e., download / create).",
   "author": {
     "name": "guanghechen",
@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/dom-blob@2.3.5",
+    "url": "https://github.com/guanghechen/react-kit/tree/@guanghechen/dom-blob@2.3.6",
     "directory": "packages/dom-blob"
   },
-  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/dom-blob@2.3.5/packages/dom-blob#readme",
+  "homepage": "https://github.com/guanghechen/react-kit/tree/@guanghechen/dom-blob@2.3.6/packages/dom-blob#readme",
   "keywords": [
     "blob"
   ],
