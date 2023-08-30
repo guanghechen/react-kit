@@ -1,11 +1,11 @@
 import type { IConsoleMock } from '@guanghechen/helper-jest'
 import { createConsoleMock } from '@guanghechen/helper-jest'
-import { ObservableCollection } from '../src'
-import type { IImmutableCollection, IObservableCollection } from '../src'
+import { ObservableMap } from '../src'
+import type { IImmutableMap, IObservableMap } from '../src'
 import { ImmutableMap, Subscriber } from './_common'
 
 describe('ObservableMap', () => {
-  let observableMap: IObservableCollection<string, string, IImmutableCollection<string, string>>
+  let observableMap: IObservableMap<string, string, IImmutableMap<string, string>>
   let consoleMock: IConsoleMock
   beforeEach(() => {
     consoleMock = createConsoleMock(['log', 'warn'])
@@ -15,7 +15,7 @@ describe('ObservableMap', () => {
   })
 
   beforeEach(() => {
-    observableMap = new ObservableCollection<string, string, IImmutableCollection<string, string>>(
+    observableMap = new ObservableMap<string, string, IImmutableMap<string, string>>(
       new ImmutableMap<string, string>(),
     )
   })
