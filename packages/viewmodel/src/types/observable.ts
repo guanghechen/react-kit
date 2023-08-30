@@ -21,7 +21,7 @@ export type IValueMap<T extends object> = {
   [key in keyof T]: T[key] extends IObservable<infer U> ? U : never
 }
 
-export type IObservableMap<T extends object> = {
+export type IObservableRecord<T extends object> = {
   [key in keyof T]: T[key] extends IObservable<any> ? T[key] : never
 }
 

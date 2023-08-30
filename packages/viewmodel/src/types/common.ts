@@ -1,13 +1,6 @@
-export type IObservableValue =
-  | bigint
-  | boolean
-  | null
-  | number
-  | object
-  | string
-  | symbol
-  | undefined
-  | void
+export type IObservablePrimitiveValue = bigint | boolean | null | number | string | symbol
+
+export type IObservableValue = IObservablePrimitiveValue | object | undefined | void
 
 export interface IDisposable {
   readonly disposed: boolean
