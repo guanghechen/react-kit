@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.7](https://github.com/guanghechen/react-kit/compare/@guanghechen/parse-lineno@2.3.6...@guanghechen/parse-lineno@2.3.7) (2023-09-04)
+
+
+### Performance Improvements
+
+* 🎨 avoid to use null ([f6d4ade](https://github.com/guanghechen/react-kit/commit/f6d4adedd05a89710a7bd3be31a81627edc12ac8))
+
+
+
+
+
 ## [2.3.6](https://github.com/guanghechen/react-kit/compare/@guanghechen/parse-lineno@2.3.5...@guanghechen/parse-lineno@2.3.6) (2023-08-30)
 
 
