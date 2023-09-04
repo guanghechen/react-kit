@@ -6,13 +6,12 @@
  * @returns
  */
 export function isEqual(x: any, y: any): boolean {
+  if (x === null || y === null) return x === y
+  if (x === undefined || y === undefined) return x === y
   if (typeof x !== typeof y) return false
   if (Object.is(x, y)) return true
 
   if (typeof x === 'object') {
-    if (x === null) return y === null
-    if (y === null) return x === null
-
     if (x.constructor !== y.constructor) return false
 
     if (Array.isArray(x)) {

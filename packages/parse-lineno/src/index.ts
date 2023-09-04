@@ -47,26 +47,22 @@ export function collectIntervals(
 
   for (const token of tokens) {
     const match = intervalRegex.exec(token)
-    if (match == null) continue
+    if (!match) continue
 
     const [, lft, rht] = match
+    const x = Number(lft)
 
     // A single number.
-    if (rht == null) {
+    if (typeof rht !== 'string') {
       const x = Number(lft)
       intervals.push([x, x])
+      continue
     }
+
+    const y = Number(rht)
 
     // A number range.
-    let x = Number(lft)
-    let y = Number(rht)
-    if (x > y) {
-      const t = x
-      x = y
-      y = t
-    }
-
-    intervals.push([x, y])
+    intervals.push(x < y ? [x, y] : [y, x])
   }
 
   intervals.sort((x, y) => {
