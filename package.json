@@ -37,7 +37,7 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@babel/core": "7.22.11",
+    "@babel/core": "7.22.15",
     "@guanghechen/conventional-changelog": "^5.0.1",
     "@guanghechen/eslint-config": "^5.0.2",
     "@guanghechen/eslint-config-jsx": "^5.0.5",
@@ -47,7 +47,7 @@
     "@guanghechen/rollup-config": "^5.2.0",
     "@guanghechen/script-doc-link": "^5.0.8",
     "@types/jest": "29.5.4",
-    "@types/node": "^18.17.12",
+    "@types/node": "^18.17.14",
     "@types/react": "^18.2.21",
     "cross-env": "^7.0.3",
     "eslint": "8.48.0",
