@@ -50,8 +50,8 @@
     "react": "^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "rimraf": "^5.0.1",
-    "rollup": "^3.28.1"
+    "cross-env": "*",
+    "rimraf": "*",
+    "rollup": "*"
   }
 }

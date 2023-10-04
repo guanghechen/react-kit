@@ -6,12 +6,10 @@
     "paths": {
       "@guanghechen/common-util": ["packages/common-util/src"],
       "@guanghechen/dom-blob": ["packages/dom-blob/src"],
-      "@guanghechen/fast-deep-equal": ["packages/fast-deep-equal/src"],
       "@guanghechen/parse-lineno": ["packages/parse-lineno/src"],
       "@guanghechen/react-confetti": ["packages/react-confetti/src"],
       "@guanghechen/react-hooks": ["packages/react-hooks/src"],
       "@guanghechen/react-viewmodel": ["packages/react-viewmodel/src"],
-      "@guanghechen/viewmodel": ["packages/viewmodel/src"],
       "jest.helper": ["jest.helper.mts"]
     }
   },

@@ -1,4 +1,4 @@
-import isEqual from '@guanghechen/fast-deep-equal'
+import { isEqual } from '@guanghechen/equal'
 import type { DependencyList } from 'react'
 import { useMemo, useRef } from 'react'
 

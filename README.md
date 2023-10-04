@@ -53,7 +53,6 @@ A monorepo contains some utility methods / hooks / components for building react
 Package                           | Description
 :--------------------------------:|:--------------------------
 [@guanghechen/dom-blob][]         | Utilities for processing blob objects (i.e., download / create).
-[@guanghechen/fast-deep-equal][]  | The fastest deep equal with ES6 Map, Set and Typed arrays support.
 [@guanghechen/parse-lineno][]     | Parse something like '1,3-10' to numbers or intervals.
 [@guanghechen/react-confetti][]   | Simple confetti particle in react.
 [@guanghechen/react-hooks][]      | Custom React hooks.
@@ -66,7 +65,6 @@ react-kit is [MIT licensed](https://github.com/guanghechen/react-kit/tree/releas
 
 [homepage]: https://github.com/guanghechen/react-kit/tree/release-2.x.x
 [@guanghechen/dom-blob]: ./packages/dom-blob
-[@guanghechen/fast-deep-equal]: ./packages/fast-deep-equal
 [@guanghechen/parse-lineno]: ./packages/parse-lineno
 [@guanghechen/react-confetti]: ./packages/react-react-confetti
 [@guanghechen/react-hooks]: ./packages/react-hooks

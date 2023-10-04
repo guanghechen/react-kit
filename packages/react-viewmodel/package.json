@@ -43,15 +43,15 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@guanghechen/fast-deep-equal": "^2.3.7",
+    "@guanghechen/equal": "^1.0.0-alpha.1",
     "@guanghechen/viewmodel": "^0.4.0"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "cross-env": "^7.0.3",
-    "rimraf": "^5.0.1",
-    "rollup": "^3.28.1"
+    "cross-env": "*",
+    "rimraf": "*",
+    "rollup": "*"
   }
 }

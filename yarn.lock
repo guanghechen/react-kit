@@ -533,11 +533,18 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@guanghechen/dom-blob@workspace:packages/dom-blob"
   dependencies:
-    cross-env: ^7.0.3
-    rimraf: ^5.0.1
-    rollup: ^3.28.1
+    cross-env: "*"
+    rimraf: "*"
+    rollup: "*"
   languageName: unknown
   linkType: soft
+
+"@guanghechen/equal@npm:^1.0.0-alpha.1":
+  version: 1.0.0-alpha.1
+  resolution: "@guanghechen/equal@npm:1.0.0-alpha.1"
+  checksum: c60edcef348e47e66a529df046d4791812e73a38b4e6bf7ddf9b5cc30c980a4649ec7445ba201923397491b3baf7db2ea7394a0b02d601df44a0f335f499d9ed
+  languageName: node
+  linkType: hard
 
 "@guanghechen/eslint-config-jsx@npm:^5.0.5":
   version: 5.0.5
@@ -580,16 +587,6 @@ __metadata:
   checksum: ed2184511fe40d7856da56593a9ef821b3ccec45ebd799c68cf657acba92f5efa24bb9e8cb30809d5844a26d9bb49ec8209b84fc689a3fdae99eb694e5cb80a5
   languageName: node
   linkType: hard
-
-"@guanghechen/fast-deep-equal@^2.3.7, @guanghechen/fast-deep-equal@workspace:packages/fast-deep-equal":
-  version: 0.0.0-use.local
-  resolution: "@guanghechen/fast-deep-equal@workspace:packages/fast-deep-equal"
-  dependencies:
-    cross-env: ^7.0.3
-    rimraf: ^5.0.1
-    rollup: ^3.28.1
-  languageName: unknown
-  linkType: soft
 
 "@guanghechen/helper-fs@npm:^5.0.6":
   version: 5.0.6
@@ -656,9 +653,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@guanghechen/parse-lineno@workspace:packages/parse-lineno"
   dependencies:
-    cross-env: ^7.0.3
-    rimraf: ^5.0.1
-    rollup: ^3.28.1
+    cross-env: "*"
+    rimraf: "*"
+    rollup: "*"
   languageName: unknown
   linkType: soft
 
@@ -667,10 +664,10 @@ __metadata:
   resolution: "@guanghechen/react-confetti@workspace:packages/react-confetti"
   dependencies:
     "@guanghechen/react-hooks": ^3.0.6
-    cross-env: ^7.0.3
+    cross-env: "*"
     js-confetti: ^0.11.0
-    rimraf: ^5.0.1
-    rollup: ^3.28.1
+    rimraf: "*"
+    rollup: "*"
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
   languageName: unknown
@@ -680,10 +677,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@guanghechen/react-hooks@workspace:packages/react-hooks"
   dependencies:
-    "@guanghechen/fast-deep-equal": ^2.3.7
-    cross-env: ^7.0.3
-    rimraf: ^5.0.1
-    rollup: ^3.28.1
+    "@guanghechen/equal": ^1.0.0-alpha.1
+    cross-env: "*"
+    rimraf: "*"
+    rollup: "*"
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
   languageName: unknown
@@ -732,11 +729,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@guanghechen/react-viewmodel@workspace:packages/react-viewmodel"
   dependencies:
-    "@guanghechen/fast-deep-equal": ^2.3.7
+    "@guanghechen/equal": ^1.0.0-alpha.1
     "@guanghechen/viewmodel": ^0.4.0
-    cross-env: ^7.0.3
-    rimraf: ^5.0.1
-    rollup: ^3.28.1
+    cross-env: "*"
+    rimraf: "*"
+    rollup: "*"
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
   languageName: unknown
@@ -785,15 +782,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@guanghechen/viewmodel@^0.4.0, @guanghechen/viewmodel@workspace:packages/viewmodel":
-  version: 0.0.0-use.local
-  resolution: "@guanghechen/viewmodel@workspace:packages/viewmodel"
-  dependencies:
-    cross-env: ^7.0.3
-    rimraf: ^5.0.1
-    rollup: ^3.28.1
-  languageName: unknown
-  linkType: soft
+"@guanghechen/viewmodel@npm:^0.4.0":
+  version: 0.4.0
+  resolution: "@guanghechen/viewmodel@npm:0.4.0"
+  checksum: 29548317697a5289bf8fbcc7fc6bb02186ebcac1e3897cf6d7c7385051956f4f855055899af09180d692f7cf2afe739a34844d681d95cdea1e49a093f3a9957a
+  languageName: node
+  linkType: hard
 
 "@humanwhocodes/config-array@npm:^0.11.10":
   version: 0.11.11
@@ -3399,7 +3393,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-env@npm:^7.0.3":
+"cross-env@npm:*, cross-env@npm:^7.0.3":
   version: 7.0.3
   resolution: "cross-env@npm:7.0.3"
   dependencies:
@@ -4848,6 +4842,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"glob@npm:^10.3.7":
+  version: 10.3.10
+  resolution: "glob@npm:10.3.10"
+  dependencies:
+    foreground-child: ^3.1.0
+    jackspeak: ^2.3.5
+    minimatch: ^9.0.1
+    minipass: ^5.0.0 || ^6.0.2 || ^7.0.0
+    path-scurry: ^1.10.1
+  bin:
+    glob: dist/esm/bin.mjs
+  checksum: 4f2fe2511e157b5a3f525a54092169a5f92405f24d2aed3142f4411df328baca13059f4182f1db1bf933e2c69c0bd89e57ae87edd8950cba8c7ccbe84f721cf3
+  languageName: node
+  linkType: hard
+
 "glob@npm:^7.1.3, glob@npm:^7.1.4":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
@@ -5851,6 +5860,19 @@ __metadata:
     "@pkgjs/parseargs":
       optional: true
   checksum: 4313a7c0cc44c7753c4cb9869935f0b06f4cf96827515f63f58ff46b3d2f6e29aba6b3b5151778397c3f5ae67ef8bfc48871967bd10343c27e90cff198ec7808
+  languageName: node
+  linkType: hard
+
+"jackspeak@npm:^2.3.5":
+  version: 2.3.6
+  resolution: "jackspeak@npm:2.3.6"
+  dependencies:
+    "@isaacs/cliui": ^8.0.2
+    "@pkgjs/parseargs": ^0.11.0
+  dependenciesMeta:
+    "@pkgjs/parseargs":
+      optional: true
+  checksum: 57d43ad11eadc98cdfe7496612f6bbb5255ea69fe51ea431162db302c2a11011642f50cfad57288bd0aea78384a0612b16e131944ad8ecd09d619041c8531b54
   languageName: node
   linkType: hard
 
@@ -8660,6 +8682,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rimraf@npm:*":
+  version: 5.0.5
+  resolution: "rimraf@npm:5.0.5"
+  dependencies:
+    glob: ^10.3.7
+  bin:
+    rimraf: dist/esm/bin.mjs
+  checksum: d66eef829b2e23b16445f34e73d75c7b7cf4cbc8834b04720def1c8f298eb0753c3d76df77325fad79d0a2c60470525d95f89c2475283ad985fd7441c32732d1
+  languageName: node
+  linkType: hard
+
 "rimraf@npm:^3.0.0, rimraf@npm:^3.0.2":
   version: 3.0.2
   resolution: "rimraf@npm:3.0.2"
@@ -8706,6 +8739,20 @@ __metadata:
     "@babel/code-frame":
       optional: true
   checksum: adb967364be4bcfc6d5ec63820ec28604418b7cb0a6dc6cbdf4141435258df453ad757677bbdc50c117aefeb318611d4253e8f378dc6de12e1b993c794723cf5
+  languageName: node
+  linkType: hard
+
+"rollup@npm:*":
+  version: 3.29.4
+  resolution: "rollup@npm:3.29.4"
+  dependencies:
+    fsevents: ~2.3.2
+  dependenciesMeta:
+    fsevents:
+      optional: true
+  bin:
+    rollup: dist/bin/rollup
+  checksum: 8bb20a39c8d91130825159c3823eccf4dc2295c9a0a5c4ed851a5bf2167dbf24d9a29f23461a54c955e5506395e6cc188eafc8ab0e20399d7489fb33793b184e
   languageName: node
   linkType: hard
 

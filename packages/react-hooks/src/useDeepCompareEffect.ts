@@ -1,4 +1,4 @@
-import isEqual from '@guanghechen/fast-deep-equal'
+import { isEqual } from '@guanghechen/equal'
 import type { DependencyList, EffectCallback } from 'react'
 import { useEffect, useRef } from 'react'
 
