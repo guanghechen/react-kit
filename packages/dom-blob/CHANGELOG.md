@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.7](https://github.com/guanghechen/react-kit/compare/@guanghechen/dom-blob@2.3.6...@guanghechen/dom-blob@2.3.7) (2023-10-04)
+
+
+### Performance Improvements
+
+* :art:  migrate few packages to sora ([647637a](https://github.com/guanghechen/react-kit/commit/647637aa6fc3c3147c2b7382d5f97d5ca4121ba9))
+
+
+
+
+
 ## [2.3.6](https://github.com/guanghechen/react-kit/compare/@guanghechen/dom-blob@2.3.5...@guanghechen/dom-blob@2.3.6) (2023-08-30)
 
 

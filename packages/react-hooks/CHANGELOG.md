@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.7](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-hooks@3.0.6...@guanghechen/react-hooks@3.0.7) (2023-10-04)
+
+
+### Performance Improvements
+
+* :art:  migrate few packages to sora ([647637a](https://github.com/guanghechen/react-kit/commit/647637aa6fc3c3147c2b7382d5f97d5ca4121ba9))
+
+
+
+
+
 ## [3.0.6](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-hooks@3.0.5...@guanghechen/react-hooks@3.0.6) (2023-09-04)
 
 **Note:** Version bump only for package @guanghechen/react-hooks
