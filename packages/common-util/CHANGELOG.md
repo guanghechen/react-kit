@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/guanghechen/react-kit/compare/@guanghechen/common-util@0.2.1...@guanghechen/common-util@0.2.2) (2023-11-26)
+
+
+### Performance Improvements
+
+* 🔧 fix devDependencies ([f427661](https://github.com/guanghechen/react-kit/commit/f42766172ab6e4c0550a4d261e7ba865ebea5f64))
+
+
+
+
+
 ## [0.2.1](https://github.com/guanghechen/react-kit/compare/@guanghechen/common-util@0.2.0...@guanghechen/common-util@0.2.1) (2023-07-29)
 
 

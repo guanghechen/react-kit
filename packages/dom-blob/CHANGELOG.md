@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.8](https://github.com/guanghechen/react-kit/compare/@guanghechen/dom-blob@2.3.7...@guanghechen/dom-blob@2.3.8) (2023-11-26)
+
+
+### Performance Improvements
+
+* :wrench:  fix npm script ([78993b9](https://github.com/guanghechen/react-kit/commit/78993b94a5573dcc5b6bb8acaeb995f55047e774))
+* 🔧 fix devDependencies ([f427661](https://github.com/guanghechen/react-kit/commit/f42766172ab6e4c0550a4d261e7ba865ebea5f64))
+* ⬆️ upgrade dependencies ([6577aca](https://github.com/guanghechen/react-kit/commit/6577aca0ddaba357eccc4cc2eab62329e8c879ea))
+
+
+
+
+
 ## [2.3.7](https://github.com/guanghechen/react-kit/compare/@guanghechen/dom-blob@2.3.6...@guanghechen/dom-blob@2.3.7) (2023-10-04)
 
 
