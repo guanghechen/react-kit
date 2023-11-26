@@ -660,10 +660,6 @@ __metadata:
 "@guanghechen/dom-blob@workspace:packages/dom-blob":
   version: 0.0.0-use.local
   resolution: "@guanghechen/dom-blob@workspace:packages/dom-blob"
-  dependencies:
-    cross-env: ^7.0.3
-    rimraf: ^5.0.5
-    rollup: ^4.5.2
   languageName: unknown
   linkType: soft
 
@@ -780,10 +776,6 @@ __metadata:
 "@guanghechen/parse-lineno@workspace:packages/parse-lineno":
   version: 0.0.0-use.local
   resolution: "@guanghechen/parse-lineno@workspace:packages/parse-lineno"
-  dependencies:
-    cross-env: ^7.0.3
-    rimraf: ^5.0.5
-    rollup: ^4.5.2
   languageName: unknown
   linkType: soft
 
@@ -792,10 +784,7 @@ __metadata:
   resolution: "@guanghechen/react-confetti@workspace:packages/react-confetti"
   dependencies:
     "@guanghechen/react-hooks": ^3.0.7
-    cross-env: ^7.0.3
     js-confetti: ^0.11.0
-    rimraf: ^5.0.5
-    rollup: ^4.5.2
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
   languageName: unknown
@@ -806,9 +795,6 @@ __metadata:
   resolution: "@guanghechen/react-hooks@workspace:packages/react-hooks"
   dependencies:
     "@guanghechen/equal": ^1.0.0-alpha.3
-    cross-env: ^7.0.3
-    rimraf: ^5.0.5
-    rollup: ^4.5.2
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
   languageName: unknown
@@ -859,9 +845,6 @@ __metadata:
   dependencies:
     "@guanghechen/equal": ^1.0.0-alpha.3
     "@guanghechen/viewmodel": ^1.0.0-alpha.7
-    cross-env: ^7.0.3
-    rimraf: ^5.0.5
-    rollup: ^4.5.2
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
   languageName: unknown
