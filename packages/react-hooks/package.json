@@ -48,7 +48,7 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@guanghechen/equal": "^1.0.0-alpha.3"
+    "@guanghechen/equal": "^1.0.0-alpha.4"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0"
