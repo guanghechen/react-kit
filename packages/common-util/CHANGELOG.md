@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/guanghechen/react-kit/compare/@guanghechen/common-util@0.2.2...@guanghechen/common-util@0.2.3) (2023-11-29)
+
+
+### Performance Improvements
+
+* 🔧 no longer to require node engine version in packages ([79e70e6](https://github.com/guanghechen/react-kit/commit/79e70e69e8c5faf339f65e2c635a45e18863df49))
+
+
+
+
+
 ## [0.2.2](https://github.com/guanghechen/react-kit/compare/@guanghechen/common-util@0.2.1...@guanghechen/common-util@0.2.2) (2023-11-26)
 
 

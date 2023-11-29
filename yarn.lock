@@ -663,14 +663,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@guanghechen/react-confetti@workspace:packages/react-confetti"
   dependencies:
-    "@guanghechen/react-hooks": ^3.0.8
+    "@guanghechen/react-hooks": ^3.0.9
     js-confetti: ^0.11.0
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
   languageName: unknown
   linkType: soft
 
-"@guanghechen/react-hooks@^3.0.8, @guanghechen/react-hooks@workspace:packages/react-hooks":
+"@guanghechen/react-hooks@^3.0.9, @guanghechen/react-hooks@workspace:packages/react-hooks":
   version: 0.0.0-use.local
   resolution: "@guanghechen/react-hooks@workspace:packages/react-hooks"
   dependencies:

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.3.9](https://github.com/guanghechen/react-kit/compare/@guanghechen/dom-blob@2.3.8...@guanghechen/dom-blob@2.3.9) (2023-11-29)
+
+
+### Performance Improvements
+
+* 🔧 no longer to require node engine version in packages ([79e70e6](https://github.com/guanghechen/react-kit/commit/79e70e69e8c5faf339f65e2c635a45e18863df49))
+
+
+
+
+
 ## [2.3.8](https://github.com/guanghechen/react-kit/compare/@guanghechen/dom-blob@2.3.7...@guanghechen/dom-blob@2.3.8) (2023-11-26)
 
 

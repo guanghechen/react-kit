@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.6](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-viewmodel@0.2.5...@guanghechen/react-viewmodel@0.2.6) (2023-11-29)
+
+
+### Performance Improvements
+
+* 🔧 no longer to require node engine version in packages ([79e70e6](https://github.com/guanghechen/react-kit/commit/79e70e69e8c5faf339f65e2c635a45e18863df49))
+* ⬆️ upgrade dependencies ([3f0340a](https://github.com/guanghechen/react-kit/commit/3f0340a9d3598fd2ef8bc6949717e18e654c781a))
+
+
+
+
+
 ## [0.2.5](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-viewmodel@0.2.4...@guanghechen/react-viewmodel@0.2.5) (2023-11-26)
 
 

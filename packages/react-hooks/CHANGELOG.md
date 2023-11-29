@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.9](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-hooks@3.0.8...@guanghechen/react-hooks@3.0.9) (2023-11-29)
+
+
+### Performance Improvements
+
+* 🔧 no longer to require node engine version in packages ([79e70e6](https://github.com/guanghechen/react-kit/commit/79e70e69e8c5faf339f65e2c635a45e18863df49))
+* ⬆️ upgrade dependencies ([3f0340a](https://github.com/guanghechen/react-kit/commit/3f0340a9d3598fd2ef8bc6949717e18e654c781a))
+
+
+
+
+
 ## [3.0.8](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-hooks@3.0.7...@guanghechen/react-hooks@3.0.8) (2023-11-26)
 
 
