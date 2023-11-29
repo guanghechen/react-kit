@@ -25,9 +25,6 @@
   "types": "lib/types/index.d.ts",
   "source": "src/index.ts",
   "license": "MIT",
-  "engines": {
-    "node": ">= 16.0.0"
-  },
   "files": [
     "lib/",
     "!lib/**/*.map",
