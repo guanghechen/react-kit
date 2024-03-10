@@ -664,13 +664,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@guanghechen/observable@npm:^6.1.0":
-  version: 6.1.0
-  resolution: "@guanghechen/observable@npm:6.1.0"
+"@guanghechen/observable@npm:^6.1.1":
+  version: 6.1.1
+  resolution: "@guanghechen/observable@npm:6.1.1"
   dependencies:
     "@guanghechen/disposable": ^1.0.0-alpha.4
     "@guanghechen/subscriber": ^1.0.0-alpha.1
-  checksum: 7e132d2421c1f82839df7d215b89803ee11fd6261d573d3b73b4b2baa4e1795af50e7531270cf64e34d2c6b244b1829d58f9cf4bf27b61acaa5f885aaffb989d
+  checksum: a65db0cbc9deb7b0e177cdc5558fad253256f463693c484a0ec6122768b53fe9d911d862367f400bcb756edc8e40dce28c7a6d3a2364328d3e1dcbc4c47485e4
   languageName: node
   linkType: hard
 
@@ -744,7 +744,7 @@ __metadata:
   resolution: "@guanghechen/react-viewmodel@workspace:packages/react-viewmodel"
   dependencies:
     "@guanghechen/equal": ^1.0.0-alpha.6
-    "@guanghechen/viewmodel": ^1.0.0-alpha.18
+    "@guanghechen/viewmodel": ^1.0.0-alpha.19
   peerDependencies:
     react: ^17.0.0 || ^18.0.0
   languageName: unknown
@@ -821,14 +821,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@guanghechen/viewmodel@npm:^1.0.0-alpha.18":
-  version: 1.0.0-alpha.18
-  resolution: "@guanghechen/viewmodel@npm:1.0.0-alpha.18"
+"@guanghechen/viewmodel@npm:^1.0.0-alpha.19":
+  version: 1.0.0-alpha.19
+  resolution: "@guanghechen/viewmodel@npm:1.0.0-alpha.19"
   dependencies:
     "@guanghechen/disposable": ^1.0.0-alpha.4
-    "@guanghechen/observable": ^6.1.0
+    "@guanghechen/observable": ^6.1.1
     "@guanghechen/subscriber": ^1.0.0-alpha.1
-  checksum: ae50132e34d0368d43e7a8f6c235dd5376ac31c83c00ff68ef3438f5ed1f93937d723dd993176a0f328eadd7668030844b7007df1915f1a7ee5cfa86becf49b3
+  checksum: 3d03e7cc1be52394c42876ef3b342a3ff6005d9a65b298100efb23af967a8efec587bd794b2610d41e30c053fba96d83c99e4fbeb60b214648d92574b7a58cf0
   languageName: node
   linkType: hard
 
