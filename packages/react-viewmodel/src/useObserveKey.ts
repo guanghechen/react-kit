@@ -1,26 +1,24 @@
+import { Subscriber } from '@guanghechen/viewmodel'
 import type {
   IImmutableCollection,
   IObservableCollection,
-  IObservableValue,
+  ISubscriber,
 } from '@guanghechen/viewmodel'
-import { useEffect, useState } from 'react'
+import React from 'react'
 
-export function useObserveKey<K, V extends IObservableValue, C extends IImmutableCollection<K, V>>(
+export function useObserveKey<K, V, C extends IImmutableCollection<K, V>>(
   collection: IObservableCollection<K, V, C>,
   key: K,
 ): V | undefined {
-  const [state, setState] = useState<V | undefined>(collection.get(key))
+  const [state, setState] = React.useState<V | undefined>(collection.get(key))
 
-  useEffect(() => {
-    const isUnsubscribed = false
-    const unsubscribable = collection.subscribeKey(key, {
-      next: v => setState(v),
-      complete: unsubscribe,
+  React.useEffect(() => {
+    const subscriber: ISubscriber<V | undefined> = new Subscriber<V | undefined>({
+      onNext: v => setState(v),
     })
-    return unsubscribe
-
-    function unsubscribe(): void {
-      if (isUnsubscribed) return
+    const unsubscribable = collection.subscribeKey(key, subscriber)
+    return () => {
+      subscriber.dispose()
       unsubscribable.unsubscribe()
     }
   }, [collection, key])

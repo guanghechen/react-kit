@@ -1,20 +1,24 @@
-import type { IObservableKey, IViewModel } from '@guanghechen/viewmodel'
-import { useEffect, useMemo, useState } from 'react'
+import { Subscriber } from '@guanghechen/viewmodel'
+import type { IObservableKey, ISubscriber, IViewModel } from '@guanghechen/viewmodel'
+import React from 'react'
 
 export function useObserveSignal<M extends IViewModel, K extends IObservableKey<M>>(
   viewmodel: M,
   keys: K[],
 ): number {
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const { ticker } = useMemo(() => viewmodel.ticker(keys), [viewmodel, ...keys])
-  const [signal, setSignal] = useState<number>(0)
+  const { ticker } = React.useMemo(() => viewmodel.ticker(keys), [viewmodel, ...keys])
+  const [signal, setSignal] = React.useState<number>(0)
 
-  useEffect(() => {
-    const unsubscribable = ticker.subscribe({
-      next: () => setSignal(s => s + 1),
-      complete: () => {},
+  React.useEffect(() => {
+    const subscriber: ISubscriber<number> = new Subscriber<number>({
+      onNext: () => setSignal(s => s + 1),
     })
-    return () => unsubscribable.unsubscribe()
+    const unsubscribable = ticker.subscribe(subscriber)
+    return () => {
+      subscriber.dispose()
+      unsubscribable.unsubscribe()
+    }
   }, [ticker])
 
   return signal
