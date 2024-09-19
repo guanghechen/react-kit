@@ -1,6 +1,6 @@
 <header>
   <h1 align="center">
-    <a href="https://github.com/guanghechen/react-kit/tree/@guanghechen/react-confetti@2.3.14/packages/react-confetti#readme">@guanghechen/react-confetti</a>
+    <a href="https://github.com/guanghechen/react-kit/tree/@guanghechen/react-confetti@2.3.15/packages/react-confetti#readme">@guanghechen/react-confetti</a>
   </h1>
   <div align="center">
     <a href="https://www.npmjs.com/package/@guanghechen/react-confetti">
@@ -88,4 +88,4 @@ const App: React.FC = () => {
 ## Related
 
 
-[homepage]: https://github.com/guanghechen/react-kit/tree/@guanghechen/react-confetti@2.3.14/packages/react-confetti#readme
+[homepage]: https://github.com/guanghechen/react-kit/tree/@guanghechen/react-confetti@2.3.15/packages/react-confetti#readme

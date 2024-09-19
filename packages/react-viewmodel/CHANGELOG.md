@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.2.13 (2024-09-19)</small>
+
+* :arrow_up:  chore: upgrade dependencies ([283ba4e](https://github.com/guanghechen/react-kit/commit/283ba4e))
+* :art:  improve: expose new method to align the react useState ([e5dd61c](https://github.com/guanghechen/react-kit/commit/e5dd61c))
+
+
+
+
+
 ## [0.2.12](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-viewmodel@0.2.11...@guanghechen/react-viewmodel@0.2.12) (2024-03-10)
 
 

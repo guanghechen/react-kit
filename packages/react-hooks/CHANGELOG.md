@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>3.0.12 (2024-09-19)</small>
+
+* :arrow_up:  chore: upgrade dependencies ([283ba4e](https://github.com/guanghechen/react-kit/commit/283ba4e))
+
+
+
+
+
 ## [3.0.11](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-hooks@3.0.10...@guanghechen/react-hooks@3.0.11) (2024-02-03)
 
 

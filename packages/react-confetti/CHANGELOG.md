@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>2.3.15 (2024-09-19)</small>
+
+**Note:** Version bump only for package @guanghechen/react-confetti
+
+
+
+
+
 ## [2.3.14](https://github.com/guanghechen/react-kit/compare/@guanghechen/react-confetti@2.3.13...@guanghechen/react-confetti@2.3.14) (2024-02-03)
 
 **Note:** Version bump only for package @guanghechen/react-confetti
