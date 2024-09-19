@@ -40,8 +40,8 @@
     "prepublishOnly": "yarn build"
   },
   "dependencies": {
-    "@guanghechen/equal": "^1.0.0-alpha.6",
-    "@guanghechen/viewmodel": "^1.0.0-alpha.19"
+    "@guanghechen/equal": "^1.0.0-alpha.7",
+    "@guanghechen/viewmodel": "^1.0.0-alpha.22"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0"
