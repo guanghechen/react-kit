@@ -6,7 +6,6 @@
     "paths": {
       "@guanghechen/common-util": ["packages/common-util/src"],
       "@guanghechen/dom-blob": ["packages/dom-blob/src"],
-      "@guanghechen/parse-lineno": ["packages/parse-lineno/src"],
       "@guanghechen/react-confetti": ["packages/react-confetti/src"],
       "@guanghechen/react-hooks": ["packages/react-hooks/src"],
       "@guanghechen/react-viewmodel": ["packages/react-viewmodel/src"],

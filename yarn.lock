@@ -684,12 +684,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@guanghechen/parse-lineno@workspace:packages/parse-lineno":
-  version: 0.0.0-use.local
-  resolution: "@guanghechen/parse-lineno@workspace:packages/parse-lineno"
-  languageName: unknown
-  linkType: soft
-
 "@guanghechen/react-confetti@workspace:packages/react-confetti":
   version: 0.0.0-use.local
   resolution: "@guanghechen/react-confetti@workspace:packages/react-confetti"
