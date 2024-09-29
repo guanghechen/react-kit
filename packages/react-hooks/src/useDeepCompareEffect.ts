@@ -14,6 +14,5 @@ export function useDeepCompareEffect(fn: EffectCallback, deps: DependencyList): 
   if (!isEqual(prevDeps.current, deps)) signal.current += 1
   prevDeps.current = deps
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(fn, [signal.current])
 }

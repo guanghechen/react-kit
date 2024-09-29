@@ -14,6 +14,5 @@ export function useDeepCompareMemo<T>(fn: () => T, deps: DependencyList): T {
   if (!isEqual(prevDeps.current, deps)) signal.current += 1
   prevDeps.current = deps
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   return useMemo(fn, [signal.current])
 }

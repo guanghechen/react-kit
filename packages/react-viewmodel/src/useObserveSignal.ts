@@ -6,7 +6,6 @@ export function useObserveSignal<M extends IViewModel, K extends IObservableKey<
   viewmodel: M,
   keys: K[],
 ): number {
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const { ticker } = React.useMemo(() => viewmodel.ticker(keys), [viewmodel, ...keys])
   const [signal, setSignal] = React.useState<number>(0)
 
