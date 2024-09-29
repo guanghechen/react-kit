@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.2.14 (2024-09-29)</small>
+
+* :arrow_up:  chore: upgrade dependencies ([015eaac](https://github.com/guanghechen/react-kit/commit/015eaac))
+* :wrench:  chore: fix lint ([865175e](https://github.com/guanghechen/react-kit/commit/865175e))
+* :wrench:  chore: fix nx config ([421dccd](https://github.com/guanghechen/react-kit/commit/421dccd))
+
+
+
+
+
 ## <small>0.2.13 (2024-09-19)</small>
 
 * :arrow_up:  chore: upgrade dependencies ([283ba4e](https://github.com/guanghechen/react-kit/commit/283ba4e))

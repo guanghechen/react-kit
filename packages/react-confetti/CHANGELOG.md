@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>2.3.16 (2024-09-29)</small>
+
+* :wrench:  chore: fix nx config ([421dccd](https://github.com/guanghechen/react-kit/commit/421dccd))
+
+
+
+
+
 ## <small>2.3.15 (2024-09-19)</small>
 
 **Note:** Version bump only for package @guanghechen/react-confetti
