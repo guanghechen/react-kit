@@ -1,5 +1,5 @@
 {
-  "name": "@guanghechen/react-kit",
+  "name": "root",
   "version": "0.0.0",
   "private": true,
   "author": {
@@ -16,10 +16,12 @@
   },
   "type": "module",
   "scripts": {
-    ":publish": "yarn test:coverage && node --experimental-vm-modules node_modules/.bin/lerna publish",
+    ":publish": "yarn build:production && yarn test:coverage && lerna publish",
+    ":publish-recover": "git stash && lerna publish from-package",
     ":upgrade": "yarn upgrade-interactive && run-s clean format build test",
-    "build": "lerna run build --concurrency 1",
-    "clean": "lerna clean --yes && yarn install",
+    "build": "nx run-many --target=build --all=true --parallel=false",
+    "build:production": "nx run-many --target=build --configuration=production --all=true --parallel=false",
+    "clean": "nx run-many --target=clean --all=true && yarn install",
     "format": "run-s format:lintfix format:prettier",
     "format:prettier": "prettier . --write",
     "format:lintfix": "eslint . --fix",
@@ -28,9 +30,10 @@
     "postinstall:dev": "is-ci || husky install",
     "postpublish": "pinst --enable",
     "rebuild": "run-s clean build",
-    "test": "lerna run test --concurrency 1",
-    "test:coverage": "lerna run --concurrency 1 test -- --coverage",
-    "test:update": "lerna run --concurrency 1 test -- -u",
+    "run:ts": "node --loader ts-node/esm",
+    "test": "nx run-many --target=test --all=true --maxParallel=1",
+    "test:coverage": "nx run-many --target=test --configuration=coverage --all=true --maxParallel=1",
+    "test:update": "nx run-many --target=test --configuration=update --all=true --maxParallel=1",
     "version": "yarn && ghc-doc-link-rewrite && git stage -u yarn.lock packages/**/package.json packages/**/*.md"
   },
   "workspaces": [
@@ -57,6 +60,7 @@
     "lerna": "8.1.8",
     "lint-staged": "15.2.10",
     "npm-run-all": "4.1.5",
+    "nx": "^19.8.2",
     "pinst": "3.0.0",
     "prettier": "3.3.3",
     "react": "^18.3.1",
