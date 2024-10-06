@@ -36,8 +36,8 @@
     "README.md"
   ],
   "dependencies": {
-    "@guanghechen/equal": "^1.0.2",
-    "@guanghechen/viewmodel": "^1.0.3"
+    "@guanghechen/equal": "^1.0.3",
+    "@guanghechen/viewmodel": "^1.0.4"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0"
