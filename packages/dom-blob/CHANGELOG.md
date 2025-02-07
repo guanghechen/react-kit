@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>2.3.11 (2025-02-07)</small>
+
+* :arrow_up:  chore: upgrade devDependencies ([622ee83](https://github.com/guanghechen/react-kit/commit/622ee83))
+
+
+
+
+
 ## <small>2.3.10 (2024-09-29)</small>
 
 * :wrench:  chore: fix nx config ([421dccd](https://github.com/guanghechen/react-kit/commit/421dccd))

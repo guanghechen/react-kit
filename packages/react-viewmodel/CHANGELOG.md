@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.2.15 (2025-02-07)</small>
+
+* :arrow_up:  chore: upgrade devDependencies ([622ee83](https://github.com/guanghechen/react-kit/commit/622ee83))
+* :wrench: chore: support react 19 ([af483ed](https://github.com/guanghechen/react-kit/commit/af483ed))
+* :wrench: chore: upgrade devDependencies ([f2ff0f9](https://github.com/guanghechen/react-kit/commit/f2ff0f9))
+
+
+
+
+
 ## <small>0.2.14 (2024-09-29)</small>
 
 * :arrow_up:  chore: upgrade dependencies ([015eaac](https://github.com/guanghechen/react-kit/commit/015eaac))
