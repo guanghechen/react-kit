@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.2.16 (2025-03-26)</small>
+
+* feat: expose new hook 'useToggleState' for boolean state ([02a865e](https://github.com/guanghechen/react-kit/commit/02a865e))
+
+
+
+
+
 ## <small>0.2.15 (2025-02-07)</small>
 
 * :arrow_up:  chore: upgrade devDependencies ([622ee83](https://github.com/guanghechen/react-kit/commit/622ee83))
