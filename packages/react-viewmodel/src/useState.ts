@@ -1,4 +1,5 @@
 import type { IState } from '@guanghechen/viewmodel'
+import React from 'react'
 import { useSyncExternalStore } from './useSyncExternalStore'
 
 export type ISetState<T> = (patch: (prev: T) => T) => void
@@ -24,4 +25,11 @@ export function useReactState<T>(state$: IState<T>): [T, IUpdateState<T>] {
   const { getSnapshot, getServerSnapshot, subscribeStateChange, updateState } = state$
   const state = useSyncExternalStore(subscribeStateChange, getSnapshot, getServerSnapshot)
   return [state, updateState]
+}
+
+export function useToggleState(state$: IState<boolean>): () => void {
+  const { setState } = state$
+  return React.useCallback((): void => {
+    setState(flag => !flag)
+  }, [setState])
 }
