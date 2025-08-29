@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.2.17 (2025-08-29)</small>
+
+* feat(react-viewmodel): add useViewModel hook & update README ([db84c92](https://github.com/guanghechen/react-kit/commit/db84c92))
+* :arrow_up: chore: upgrade dependencies ([bcad120](https://github.com/guanghechen/react-kit/commit/bcad120))
+
+
+
+
+
 ## <small>0.2.16 (2025-03-26)</small>
 
 * feat: expose new hook 'useToggleState' for boolean state ([02a865e](https://github.com/guanghechen/react-kit/commit/02a865e))
