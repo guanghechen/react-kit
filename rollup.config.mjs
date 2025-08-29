@@ -17,6 +17,9 @@ export default async function rollupConfig() {
       tsPresetConfigBuilder({
         typescriptOptions: {
           tsconfig: 'tsconfig.src.json',
+          compilerOptions: {
+            moduleResolution: 'node',
+          },
         },
       }),
     ],
