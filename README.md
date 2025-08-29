@@ -64,5 +64,5 @@ react-kit is [MIT licensed](https://github.com/guanghechen/react-kit/tree/releas
 
 [homepage]: https://github.com/guanghechen/react-kit/tree/release-2.x.x
 [@guanghechen/dom-blob]: ./packages/dom-blob
-[@guanghechen/react-confetti]: ./packages/react-react-confetti
+[@guanghechen/react-confetti]: ./packages/react-confetti
 [@guanghechen/react-hooks]: ./packages/react-hooks
