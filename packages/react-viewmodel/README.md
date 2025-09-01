@@ -1,6 +1,6 @@
 <header>
   <h1 align="center">
-    <a href="https://github.com/guanghechen/react-kit/tree/@guanghechen/react-viewmodel@0.2.17/packages/react-viewmodel#readme">@guanghechen/react-viewmodel</a>
+    <a href="https://github.com/guanghechen/react-kit/tree/@guanghechen/react-viewmodel@0.2.18/packages/react-viewmodel#readme">@guanghechen/react-viewmodel</a>
   </h1>
   <div align="center">
     <a href="https://www.npmjs.com/package/@guanghechen/react-viewmodel">
@@ -247,4 +247,4 @@ const user$ = new State<IUser>({ name: 'Alice', age: 30 })
 ```
 
 
-[homepage]: https://github.com/guanghechen/react-kit/tree/@guanghechen/react-viewmodel@0.2.17/packages/react-viewmodel#readme
+[homepage]: https://github.com/guanghechen/react-kit/tree/@guanghechen/react-viewmodel@0.2.18/packages/react-viewmodel#readme

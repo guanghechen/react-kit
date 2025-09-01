@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>0.2.18 (2025-09-01)</small>
+
+* improve(useViewModel): support async function ([5debf66](https://github.com/guanghechen/react-kit/commit/5debf66))
+* :arrow_up: chore: upgrade dependencies ([bcad120](https://github.com/guanghechen/react-kit/commit/bcad120))
+* :bookmark:  release ([493af9a](https://github.com/guanghechen/react-kit/commit/493af9a))
+* feat(react-viewmodel): add useViewModel hook & update README ([db84c92](https://github.com/guanghechen/react-kit/commit/db84c92))
+
+
+
+
+
 ## <small>0.2.17 (2025-08-29)</small>
 
 * feat(react-viewmodel): add useViewModel hook & update README ([db84c92](https://github.com/guanghechen/react-kit/commit/db84c92))
