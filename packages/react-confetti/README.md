@@ -60,10 +60,10 @@ Simple confetti particle in React.
   npm install --save @guanghechen/react-confetti
   ```
 
-* yarn
+* pnpm
 
   ```bash
-  yarn add @guanghechen/react-confetti
+  pnpm add @guanghechen/react-confetti
   ```
 
 ## Usage

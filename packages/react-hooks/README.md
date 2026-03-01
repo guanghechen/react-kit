@@ -60,10 +60,10 @@
   npm install --save @guanghechen/react-hooks
   ```
 
-* yarn
+* pnpm
 
   ```bash
-  yarn add @guanghechen/react-hooks
+  pnpm add @guanghechen/react-hooks
   ```
 
 ## Usage

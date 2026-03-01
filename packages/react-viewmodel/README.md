@@ -60,10 +60,10 @@ React viewmodel integration providing reactive state management with State and C
   npm install --save @guanghechen/react-viewmodel
   ```
 
-* yarn
+* pnpm
 
   ```bash
-  yarn add @guanghechen/react-viewmodel
+  pnpm add @guanghechen/react-viewmodel
   ```
 
 ## Usage

@@ -55,10 +55,10 @@ Utilities for processing blob objects (i.e., download / create).
   npm install --save @guanghechen/dom-blob
   ```
 
-* yarn
+* pnpm
 
   ```bash
-  yarn add @guanghechen/dom-blob
+  pnpm add @guanghechen/dom-blob
   ```
 
 ## Usage
