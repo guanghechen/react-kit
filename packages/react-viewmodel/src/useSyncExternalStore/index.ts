@@ -5,7 +5,7 @@ import * as React from 'react'
 import { useSyncExternalStore as client } from './client'
 import { useSyncExternalStore as server } from './server'
 
-const canUseDOM: boolean = !!(
+const canUseDOM = !!(
   typeof window !== 'undefined' &&
   typeof window.document !== 'undefined' &&
   typeof window.document.createElement !== 'undefined'

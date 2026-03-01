@@ -1,5 +1,7 @@
-import { Subscriber } from '@guanghechen/viewmodel'
-import type { IObservableKey, ISubscriber, IViewModel } from '@guanghechen/viewmodel'
+import type { IObservableKey } from '@guanghechen/observable'
+import { Subscriber } from '@guanghechen/subscriber'
+import type { ISubscriber } from '@guanghechen/subscriber'
+import type { IViewModel } from '@guanghechen/viewmodel'
 import React from 'react'
 
 export function useObserveSignal<M extends IViewModel, K extends IObservableKey<M>>(

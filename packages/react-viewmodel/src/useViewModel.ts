@@ -12,7 +12,7 @@ export const useViewModel = <T extends V>(fn: F<T>): T | null => {
   fnRef.current = fn
 
   React.useEffect(() => {
-    let cancelled: boolean = false
+    let cancelled = false
     if (!ref.current) {
       const promise: Promise<T> = Promise.resolve(fnRef.current())
       void promise

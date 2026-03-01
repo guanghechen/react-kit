@@ -1,9 +1,6 @@
-import { Subscriber } from '@guanghechen/viewmodel'
-import type {
-  IImmutableCollection,
-  IObservableCollection,
-  ISubscriber,
-} from '@guanghechen/viewmodel'
+import { Subscriber } from '@guanghechen/subscriber'
+import type { ISubscriber } from '@guanghechen/subscriber'
+import type { IImmutableCollection, IObservableCollection } from '@guanghechen/viewmodel'
 import React from 'react'
 
 export function useObserveKey<K, V, C extends IImmutableCollection<K, V>>(
