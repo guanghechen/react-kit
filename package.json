@@ -32,12 +32,11 @@
     "test": "vitest run --passWithNoTests",
     "test:coverage": "vitest run --coverage --passWithNoTests",
     "test:update": "vitest -u --passWithNoTests",
-    "version": "pnpm install && ghc-doc-link-rewrite && git stage -u pnpm-lock.yaml packages/**/package.json packages/**/*.md",
+    "version": "pnpm install && node script/sync-doc-link.mjs && git stage -u pnpm-lock.yaml packages/**/package.json packages/**/*.md",
     ":publish:all": "pnpm -r exec npm version patch --no-git-tag-version && pnpm -r publish --no-git-checks"
   },
   "devDependencies": {
     "@eslint/js": "9.39.3",
-    "@guanghechen/script-doc-link": "^6.0.9",
     "@rollup/plugin-commonjs": "29.0.0",
     "@rollup/plugin-json": "6.1.0",
     "@rollup/plugin-node-resolve": "16.0.3",
