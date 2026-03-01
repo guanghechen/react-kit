@@ -5,7 +5,11 @@ export default async function rollupConfig() {
   const sourcemapFromCLI = process.argv
   .filter(arg => arg.startsWith('--sourcemap='))
   .map(arg => arg.split('=')[1])
-  const sourcemap = sourcemapFromCLI.length > 0 ? sourcemapFromCLI[0] === 'true' : false
+  const sourcemapFromEnv = process.env.ROLLUP_SHOULD_SOURCEMAP
+  const sourcemap =
+    sourcemapFromCLI.length > 0
+      ? sourcemapFromCLI[0] === 'true'
+      : sourcemapFromEnv === 'true'
 
   const { default: manifest } = await import(path.resolve('package.json'), {
     with: { type: 'json' },

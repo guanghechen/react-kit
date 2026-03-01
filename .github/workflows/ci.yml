@@ -6,33 +6,40 @@ name: Build
 
 on:
   push:
-    tags:
-      - v*
+    branches:
+      - main
+      - release-*
   pull_request:
     branches:
       - main
       - release-*
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     strategy:
       matrix:
-        node-version:
-          - 18
+        node:
           - 20
           - 22
+          - 24
     steps:
-      - uses: actions/checkout@v5
+      - name: Checkout 🛎️
+        uses: actions/checkout@v5
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js ${{ matrix.node }}
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: ${{ matrix.node }}
           cache: 'pnpm'
-      - name: Installation
+      - name: Install dependencies
         run: pnpm install --frozen-lockfile
       - name: Build
         run: pnpm build

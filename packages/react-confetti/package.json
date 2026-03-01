@@ -36,10 +36,14 @@
     "README.md"
   ],
   "dependencies": {
-    "@guanghechen/react-hooks": "^3.0.14",
+    "@guanghechen/react-hooks": "workspace:^",
     "js-confetti": "0.12.0"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0"
+  },
+  "scripts": {
+    "build": "rollup -c ../../rollup.config.mjs",
+    "clean": "rimraf lib"
   }
 }
