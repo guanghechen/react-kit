@@ -1,5 +1,5 @@
 {
-  "extends": "../../tsconfig.settings",
+  "extends": "../../tsconfig.lib.json",
   "compilerOptions": {
     "declarationDir": "lib/types",
     "lib": ["esnext", "dom", "dom.iterable"],
