@@ -8,8 +8,7 @@
       "@guanghechen/dom-blob": ["packages/dom-blob/src"],
       "@guanghechen/react-confetti": ["packages/react-confetti/src"],
       "@guanghechen/react-hooks": ["packages/react-hooks/src"],
-      "@guanghechen/react-viewmodel": ["packages/react-viewmodel/src"],
-      "jest.helper": ["jest.helper.mts"]
+      "@guanghechen/react-viewmodel": ["packages/react-viewmodel/src"]
     }
   },
   "exclude": ["**/__test__/fixtures"]
