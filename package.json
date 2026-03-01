@@ -36,6 +36,7 @@
     ":publish:all": "pnpm -r exec npm version patch --no-git-tag-version && pnpm -r publish --no-git-checks"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.29.8",
     "@eslint/js": "9.39.3",
     "@rollup/plugin-commonjs": "29.0.0",
     "@rollup/plugin-json": "6.1.0",

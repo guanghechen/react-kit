@@ -1,6 +1,6 @@
 {
   "name": "@guanghechen/dom-blob",
-  "version": "2.3.11",
+  "version": "2.3.12",
   "description": "Utilities for processing blob objects (i.e., download / create).",
   "author": {
     "name": "guanghechen",
