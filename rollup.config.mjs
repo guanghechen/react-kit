@@ -1,6 +1,3 @@
-import commonjs from '@rollup/plugin-commonjs'
-import json from '@rollup/plugin-json'
-import { nodeResolve } from '@rollup/plugin-node-resolve'
 import typescript from '@rollup/plugin-typescript'
 import { builtinModules } from 'node:module'
 import path from 'node:path'
@@ -34,8 +31,6 @@ const cjs = entry.require ?? manifest.main
 const types = entry.types ?? manifest.types
 
 const tsPlugins = [
-  nodeResolve({ preferBuiltins: true, extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'] }),
-  json(),
   typescript({
     tsconfig: 'tsconfig.lib.json',
     compilerOptions: {
@@ -45,7 +40,6 @@ const tsPlugins = [
       removeComments,
     },
   }),
-  commonjs(),
 ]
 
 const configs = []
