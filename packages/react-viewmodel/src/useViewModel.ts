@@ -4,6 +4,13 @@ import React from 'react'
 type V = IViewModel & { name?: string | null }
 type F<T extends V> = () => T | Promise<T>
 
+/**
+ * Creates and owns a ViewModel. Each factory call must create a fresh, undisposed instance,
+ * returned directly or through a Promise; cached or shared instances are not supported.
+ * The factory must tolerate repeated calls, including during StrictMode effect replay.
+ * The hook disposes each instance on cleanup or when it resolves after cleanup.
+ * Callers must not dispose the instance themselves.
+ */
 export const useViewModel = <T extends V>(fn: F<T>): T | null => {
   const ref = React.useRef<T | null>(null)
   const [_, setTick] = React.useState<number>(0)
@@ -17,21 +24,22 @@ export const useViewModel = <T extends V>(fn: F<T>): T | null => {
       const promise: Promise<T> = Promise.resolve(fnRef.current())
       void promise
         .then((viewmodel: T): void => {
+          if (cancelled) {
+            viewmodel.dispose()
+            return
+          }
+
           ref.current = viewmodel
           const name: string = viewmodel.name || viewmodel.constructor.name
           console.log(`[useViewModel] creating ${name}.`)
-
-          if (!cancelled) {
-            setTick(c => c + 1)
-          }
+          setTick(c => c + 1)
         })
         .catch(error => {
-          ref.current = null
           console.log('[useViewModel] failed. error:', error)
+          if (cancelled) return
 
-          if (!cancelled) {
-            setTick(c => c + 1)
-          }
+          ref.current = null
+          setTick(c => c + 1)
         })
     }
 

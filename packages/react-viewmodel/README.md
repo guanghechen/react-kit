@@ -186,6 +186,15 @@ const ShoppingCart: React.FC = () => {
 
 Create and manage ViewModel instances with automatic lifecycle management:
 
+The factory passed to `useViewModel` must create a fresh, undisposed instance on each
+call, either synchronously or asynchronously. Do not return a cached instance or reuse
+a Promise that resolves to the same instance. React may call the factory repeatedly
+during StrictMode effect replay.
+
+`useViewModel` owns the returned instance and calls `dispose()` on cleanup, including
+for asynchronous results that arrive after cleanup. Callers must not dispose the
+instance themselves or reuse it across separate hook lifecycles.
+
 ```tsx
 import { ViewModel, useViewModel } from '@guanghechen/react-viewmodel'
 import React from 'react'

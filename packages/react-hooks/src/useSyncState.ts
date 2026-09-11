@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
  * @returns
  */
 export function useSyncState<S>(initialState: S): [S, Dispatch<SetStateAction<S>>] {
-  const [state, setState] = useState(initialState)
-  useEffect(() => setState(initialState), [initialState])
+  const [state, setState] = useState(() => initialState)
+  useEffect(() => setState(() => initialState), [initialState])
   return [state, setState]
 }

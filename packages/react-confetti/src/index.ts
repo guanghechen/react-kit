@@ -20,9 +20,11 @@ export const useThrowRandomConfetti = (): (() => Promise<void>) => {
   const confettiRef = useRef<JSConfetti | null>(null)
 
   useEffect(() => {
-    confettiRef.current = new JSConfetti()
+    const confetti = new JSConfetti()
+    confettiRef.current = confetti
     return () => {
-      confettiRef.current?.clearCanvas()
+      confetti.clearCanvas()
+      confetti.destroyCanvas()
       confettiRef.current = null
     }
   }, [])

@@ -64,6 +64,7 @@ function hasTestFiles(): boolean {
 const shouldCheckCoverageThresholds = hasTestFiles()
 
 export default defineConfig({
+  root: __dirname,
   test: {
     environment: 'node',
     include: ['packages/*/__test__/**/*.spec.ts'],

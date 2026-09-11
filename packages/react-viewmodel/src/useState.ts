@@ -3,7 +3,7 @@ import React from 'react'
 import { useSyncExternalStore } from './useSyncExternalStore'
 
 export type ISetState<T> = (patch: (prev: T) => T) => void
-export type IUpdateState<T> = T | ISetState<T>
+export type IUpdateState<T> = (patch: T | ((prev: T) => T)) => void
 
 export function useStateValue<T>(state$: IState<T>): T {
   const { getSnapshot, getServerSnapshot, subscribeStateChange } = state$
