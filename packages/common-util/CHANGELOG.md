@@ -1,5 +1,11 @@
 # Change Log
 
+## 0.2.7
+
+### Patch Changes
+
+- Add regression coverage for debounce and throttle timing, cancellation, and flushing.
+
 ## 0.2.6
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.3.19
+
+### Patch Changes
+
+- Destroy the owned confetti canvas on cleanup and add resource lifecycle regression coverage.
+- Updated dependencies:
+  - @guanghechen/react-hooks@3.0.16
+
 ## 2.3.18
 
 ### Patch Changes

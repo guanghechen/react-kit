@@ -1,5 +1,12 @@
 # Change Log
 
+## 2.3.13
+
+### Patch Changes
+
+- Preserve commas and percent-encoded bytes in data URL payloads, with regression coverage
+  for conversion and download cleanup.
+
 ## 2.3.12
 
 ### Patch Changes

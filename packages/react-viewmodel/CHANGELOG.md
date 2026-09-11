@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.2.20
+
+### Patch Changes
+
+- Dispose late ViewModel creation results without affecting active instances, document factory
+  ownership, add race regression coverage, and correct the update-state function type.
+
 ## 0.2.19
 
 ### Patch Changes

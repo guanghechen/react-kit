@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.0.16
+
+### Patch Changes
+
+- Preserve function values in useSyncState and add state, callback, and effect regression coverage.
+
 ## 3.0.15
 
 ### Patch Changes
