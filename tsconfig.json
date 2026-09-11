@@ -1,14 +1,13 @@
 {
   "extends": "./tsconfig.settings.json",
   "compilerOptions": {
-    "baseUrl": ".",
     "sourceMap": true,
     "paths": {
-      "@guanghechen/common-util": ["packages/common-util/src"],
-      "@guanghechen/dom-blob": ["packages/dom-blob/src"],
-      "@guanghechen/react-confetti": ["packages/react-confetti/src"],
-      "@guanghechen/react-hooks": ["packages/react-hooks/src"],
-      "@guanghechen/react-viewmodel": ["packages/react-viewmodel/src"]
+      "@guanghechen/common-util": ["./packages/common-util/src"],
+      "@guanghechen/dom-blob": ["./packages/dom-blob/src"],
+      "@guanghechen/react-confetti": ["./packages/react-confetti/src"],
+      "@guanghechen/react-hooks": ["./packages/react-hooks/src"],
+      "@guanghechen/react-viewmodel": ["./packages/react-viewmodel/src"]
     }
   },
   "exclude": ["**/__test__/fixtures"]
