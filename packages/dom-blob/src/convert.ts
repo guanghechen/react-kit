@@ -12,7 +12,7 @@ export function convertDataURLToBlob(dataURL: string): Blob {
   }
 
   let contentType = dataURL.slice(0, commaIndex).split(':')[1]
-  const base64 = contentType.endsWith(';base64')
+  const base64 = contentType.toLowerCase().endsWith(';base64')
   if (base64) contentType = contentType.slice(0, -7)
 
   const payload = dataURL.slice(commaIndex + 1)
