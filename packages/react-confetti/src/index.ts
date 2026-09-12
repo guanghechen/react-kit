@@ -15,22 +15,27 @@ const randomConfettiColors = (): IAddConfettiConfig['confettiColors'] => {
   return confettiColorsSet[idx]
 }
 
+/**
+ * Each call resolves when its animation completes or the hook unmounts.
+ * Animation errors still reject the returned Promise.
+ */
 export const useThrowRandomConfetti = (): (() => Promise<void>) => {
-  const lockRef = useRef<boolean>(false)
+  const pendingRef = useRef(new Set<() => void>())
   const confettiRef = useRef<JSConfetti | null>(null)
 
   useEffect(() => {
     const confetti = new JSConfetti()
     confettiRef.current = confetti
     return () => {
+      confettiRef.current = null
+      for (const cancel of pendingRef.current) cancel()
+      pendingRef.current.clear()
       confetti.clearCanvas()
       confetti.destroyCanvas()
-      confettiRef.current = null
     }
   }, [])
 
   const throwConfetti = useEventCallback(async (): Promise<void> => {
-    // if (lockRef.current) return
     if (confettiRef.current == null) return
 
     const confetti = confettiRef.current
@@ -43,11 +48,15 @@ export const useThrowRandomConfetti = (): (() => Promise<void>) => {
       confettiNumber: xs ? 100 : 300,
     }
 
-    lockRef.current = true
+    let cancel!: () => void
+    const cancelled = new Promise<void>(resolve => {
+      cancel = resolve
+    })
+    pendingRef.current.add(cancel)
     try {
-      await confetti.addConfetti(config)
+      await Promise.race([confetti.addConfetti(config), cancelled])
     } finally {
-      lockRef.current = false
+      pendingRef.current.delete(cancel)
     }
   })
   return throwConfetti
