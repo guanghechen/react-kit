@@ -62,11 +62,18 @@ Package                           | Description
 Run `pnpm format` to apply Biome formatting, import organization, and safe lint fixes.
 Run `pnpm lint` to check them without modifying files; CI runs the same check.
 The pre-commit hook applies Biome to staged JavaScript, TypeScript, and JSON files.
+`@guanghechen/githooks` installs hooks from `package.json` during `postinstall`,
+skipping CI. Generated hooks live in the ignored `.githooks/` directory.
 Use Node.js 24.11 or newer in the Node.js 24 release line for development.
 Run `pnpm typecheck`, `pnpm build`, `pnpm test:dist`, and `pnpm test:coverage`
 for the remaining checks. tsdown builds ESM, CJS, and bundled declarations into
 each package's existing `lib/` entry points. `pnpm build:production` omits source maps.
-CI builds on Node.js 24, then checks the outputs and runs tests on Node.js 20, 22, and 24.
+CI builds and runs unit tests with coverage on Node.js 24, then checks the outputs
+on Node.js 20, 22, and 24.
+
+Test type checking uses `skipLibCheck` to tolerate upstream declaration errors in
+Vitest 5.0.0. Source and test code remain checked; `test:dist` separately checks
+public declarations with `--strict` and without `skipLibCheck`.
 
 Biome's Promise rules are enabled but remain nursery rules, so their type analysis
 is not identical to typescript-eslint. Import cycles and undeclared dependencies

@@ -49,11 +49,11 @@ jobs:
         run: pnpm typecheck
       - name: Build
         run: pnpm build
+      - name: Test
+        run: pnpm test:coverage
       - name: Use Node.js ${{ matrix.node }} for tests
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node }}
       - name: Test build output
         run: pnpm test:dist
-      - name: Test
-        run: pnpm test:coverage
