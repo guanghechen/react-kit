@@ -19,6 +19,7 @@
   "main": "./lib/cjs/index.cjs",
   "module": "./lib/esm/index.mjs",
   "exports": {
+    "types": "./lib/types/index.d.ts",
     "import": "./lib/esm/index.mjs",
     "require": "./lib/cjs/index.cjs"
   },
@@ -34,7 +35,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "rollup -c ../../rollup.config.mjs",
+    "build": "tsdown --config ../../tsdown.config.mjs",
     "clean": "rimraf lib"
   }
 }

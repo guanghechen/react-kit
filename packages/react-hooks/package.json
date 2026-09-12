@@ -47,7 +47,7 @@
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0"
   },
   "scripts": {
-    "build": "rollup -c ../../rollup.config.mjs",
+    "build": "tsdown --config ../../tsdown.config.mjs",
     "clean": "rimraf lib"
   }
 }
