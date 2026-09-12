@@ -21,7 +21,7 @@ vi.mock('js-confetti', () => ({
     public clearCanvas = vi.fn()
     public destroyCanvas = vi.fn()
 
-    constructor() {
+    public constructor() {
       instances.current.push(this)
     }
   },

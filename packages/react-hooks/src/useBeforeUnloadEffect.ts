@@ -34,15 +34,12 @@ export function useBeforeUnloadAsyncEffect(
       // The browser will handle the page unload after the event handler finishes execution
       // You can't directly control the timing or cancel the unload process
       // The returned value is ignored in most modern browsers
-      // eslint-disable-next-line no-param-reassign
       delete event.returnValue
     }
   })
 
   useLayoutEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     window.addEventListener('beforeunload', beforeunload)
-    // eslint-disable-next-line @typescript-eslint/no-misused-promises
     return () => window.removeEventListener('beforeunload', beforeunload)
   }, [beforeunload])
 }

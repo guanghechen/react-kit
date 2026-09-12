@@ -139,7 +139,6 @@ export function debounce<T extends (...args: any[]) => any>(
 
     const now: number = Date.now()
 
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
     _lastThis = this
     _lastArgs = args
     _lastCallTime = now
@@ -154,7 +153,6 @@ export function debounce<T extends (...args: any[]) => any>(
     const time: number = Date.now()
     const isInvoking: boolean = shouldInvoke(time)
 
-    // eslint-disable-next-line @typescript-eslint/no-this-alias
     _lastThis = this
     _lastArgs = args
     _lastCallTime = time

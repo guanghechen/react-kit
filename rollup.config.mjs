@@ -1,6 +1,6 @@
-import typescript from '@rollup/plugin-typescript'
 import { builtinModules } from 'node:module'
 import path from 'node:path'
+import typescript from '@rollup/plugin-typescript'
 import { dts } from 'rollup-plugin-dts'
 
 const shouldSourcemap = process.env.ROLLUP_SHOULD_SOURCEMAP === 'true'

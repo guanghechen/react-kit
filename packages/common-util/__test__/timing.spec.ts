@@ -113,8 +113,9 @@ describe('debounce', () => {
   })
 
   it('uses and cancels animation frames when available', () => {
-    vi.stubGlobal('requestAnimationFrame', (callback: () => void): ReturnType<typeof setTimeout> =>
-      setTimeout(callback, 16),
+    vi.stubGlobal(
+      'requestAnimationFrame',
+      (callback: () => void): ReturnType<typeof setTimeout> => setTimeout(callback, 16),
     )
     const cancel = vi.fn((id: ReturnType<typeof setTimeout>): void => clearTimeout(id))
     vi.stubGlobal('cancelAnimationFrame', cancel)

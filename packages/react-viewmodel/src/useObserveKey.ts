@@ -1,5 +1,5 @@
-import { Subscriber } from '@guanghechen/subscriber'
 import type { ISubscriber } from '@guanghechen/subscriber'
+import { Subscriber } from '@guanghechen/subscriber'
 import type { IImmutableCollection, IObservableCollection } from '@guanghechen/viewmodel'
 import React from 'react'
 

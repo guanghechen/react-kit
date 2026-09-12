@@ -1,6 +1,6 @@
 import type { IObservableKey } from '@guanghechen/observable'
-import { Subscriber } from '@guanghechen/subscriber'
 import type { ISubscriber } from '@guanghechen/subscriber'
+import { Subscriber } from '@guanghechen/subscriber'
 import type { IViewModel } from '@guanghechen/viewmodel'
 import React from 'react'
 
