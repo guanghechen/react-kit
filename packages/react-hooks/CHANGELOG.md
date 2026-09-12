@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.0.17
+
+### Patch Changes
+
+- Refresh ESM, CommonJS, and public TypeScript declaration outputs with the updated build toolchain while retaining existing package entry points.
+
 ## 3.0.16
 
 ### Patch Changes

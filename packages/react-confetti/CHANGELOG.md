@@ -1,5 +1,14 @@
 # Change Log
 
+## 2.3.20
+
+### Patch Changes
+
+- Refresh ESM, CommonJS, and public TypeScript declaration outputs with the updated build toolchain while retaining existing package entry points.
+- Resolve pending confetti promises when the hook unmounts, while preserving rejection for active animation failures.
+- Updated dependencies:
+  - @guanghechen/react-hooks@3.0.17
+
 ## 2.3.19
 
 ### Patch Changes

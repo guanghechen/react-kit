@@ -1,5 +1,12 @@
 # Change Log
 
+## 0.2.21
+
+### Patch Changes
+
+- Preserve function values returned by useObserveKey instead of invoking them during initialization or subscription updates.
+- Refresh ESM, CommonJS, and public TypeScript declaration outputs with the updated build toolchain while retaining existing package entry points.
+
 ## 0.2.20
 
 ### Patch Changes

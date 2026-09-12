@@ -1,5 +1,12 @@
 # Change Log
 
+## 2.3.14
+
+### Patch Changes
+
+- Decode data URLs with uppercase or mixed-case base64 markers correctly while preserving MIME parameters and payload bytes.
+- Refresh ESM, CommonJS, and public TypeScript declaration outputs with the updated build toolchain while retaining existing package entry points.
+
 ## 2.3.13
 
 ### Patch Changes
